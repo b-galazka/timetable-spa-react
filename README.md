@@ -2,7 +2,7 @@
 
 How to use:
 1. Run `npm install` command.
-2. Set API base URL, default redirection (homepage url is redirected to path you've set) and URL to download mobile app in src/json/urls.json.
+2. Set API base URL, default redirection (homepage redirects to path you've set) and URL to download mobile app in src/json/urls.json.
 3. Run `npm start` (dev enviroment with webpack-dev-server) or `npm run build`.
 
 <hr>
