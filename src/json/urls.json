@@ -1,0 +1,5 @@
+{
+    "mobileAppDownload": "http://example.com",
+    "defaultRedirection": "/klasa/4ET",
+    "apiBaseUrl": "http://example.com"
+}

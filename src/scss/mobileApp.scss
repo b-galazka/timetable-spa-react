@@ -1,0 +1,30 @@
+@import 'config';
+
+.mobile-app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+
+    &__button {
+        border: none;
+        background-color: $darkGrey;
+        color: #FFF;
+        font-size: 16px;
+        text-decoration: none;
+        font-family: $font;
+        padding: 10px 15px;
+        min-width: 80%;
+        max-width: 300px;
+        flex-grow: 0;
+        border-radius: 10px;
+        text-align: center;
+        display: block;
+
+        &:first-child {
+            margin-bottom: 15px;
+        }
+    }
+}

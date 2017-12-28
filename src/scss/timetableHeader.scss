@@ -1,0 +1,14 @@
+@import 'config'; 
+
+.timetable {
+    &__header {
+        background-color: $darkGrey;
+        padding: 30px 10px 10px 10px;
+        border-bottom: 5px solid #FFF;
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "nauczyciel": "teacher",
+    "klasa": "class",
+    "sala": "classroom",
+    "types": ["nauczyciel", "klasa", "sala"]
+}

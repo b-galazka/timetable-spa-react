@@ -1,0 +1,20 @@
+{
+    "lastModified": "Ostatnia aktualizacja",
+    "classroom": "sala",
+    "schoolClass": "klasa",
+    "title": {
+        "base": "ZSCKP",
+        "notFound": "błąd 404"
+    },
+    "number": "Nr",
+    "hour": "Godz",
+    "days": [
+        "Poniedziałek",
+        "Wtorek",
+        "Środa",
+        "Czwartek",
+        "Piątek"
+    ],
+    "downloadApp": "Pobierz aplikację mobilną",
+    "visitPage": "Przejdź do witryny"
+}

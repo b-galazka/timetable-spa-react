@@ -1,0 +1,16 @@
+.app__no-content, .timetable__loader {
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timetable__loader {
+    height: auto;
+    flex: 1 1 auto;
+}
+
+.app__fetching-error {
+    text-align: center;
+}
