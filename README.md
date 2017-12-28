@@ -7,6 +7,6 @@ How to use:
 
 <hr>
 
-It uses <a href="https://github.com/b-galazka/timetable-api">this</a> API.
-Live version is available <a href="http://plan-zsckp.tk">here</a>.
+It uses <a href="https://github.com/b-galazka/timetable-api">this</a> API.  
+Live version is available <a href="http://plan-zsckp.tk">here</a>.  
 <a href="https://github.com/b-galazka/timetable-spa-angular">Angular version</a> of this app.
