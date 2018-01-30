@@ -7,6 +7,14 @@
     align-content: center;
     align-items: center;
     height: 100vh;
+    min-width: 250px;
+
+    &__wrapper {
+        width: 80%;
+        max-width: 300px;
+        flex-grow: 0;
+        flex-shrink: 1;
+    }
 
     &__button {
         border: none;
@@ -16,9 +24,7 @@
         text-decoration: none;
         font-family: $font;
         padding: 10px 15px;
-        min-width: 80%;
-        max-width: 300px;
-        flex-grow: 0;
+        width: 100%;
         border-radius: 10px;
         text-align: center;
         display: block;

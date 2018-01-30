@@ -6,6 +6,7 @@ import classrooms from './classroomsList';
 import timetableObject from './timetableObject';
 import hours from './hoursList';
 import initialState from './initialState';
+import mobileAppData from './mobileAppData';
 
 export default combineReducers({
     classes,
@@ -13,5 +14,6 @@ export default combineReducers({
     teachers,
     timetableObject,
     hours,
-    initialState
+    initialState,
+    mobileAppData
 });

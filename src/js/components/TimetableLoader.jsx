@@ -41,10 +41,10 @@ class TimetableLoader extends Component {
             return <LoadingAnimation />;
         } else if (timetableObject.fetchingError) {
 
-            return errors.fetchingError;
+            return <p className="timetable__fetching-error">{errors.fetchingError}</p>;
         } else if (timetableObject.notExists) {
 
-            return errors.notFound;
+            return <p className="timetable__fetching-error">{errors.notFound}</p>;
         } else {
 
             return null;

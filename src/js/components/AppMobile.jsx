@@ -1,11 +1,32 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+
+import AppMobileLoader from './AppMobileLoader';
+import {getMobileAppData} from '../actions/mobileAppData';
 
 import texts from '../../json/texts.json';
-import urls from '../../json/urls.json';
 
 import '../../scss/mobileApp.scss';
 
-export default class AppMobile extends Component {
+function mapStateToProps(state) {
+
+    const {data, fetched} = state.mobileAppData;
+
+    return {
+        mobileAppData: data,
+        mobileAppDataFetched: fetched
+    };
+}
+
+function mapDisptachToProps(dispatch) {
+
+    return {
+        getMobileAppData: bindActionCreators(getMobileAppData, dispatch)
+    };
+}
+
+class AppMobile extends Component {
 
     constructor() {
 
@@ -16,24 +37,41 @@ export default class AppMobile extends Component {
 
     render() {
 
+        const {mobileAppData, mobileAppDataFetched} = this.props;
+
         return (
             <main className="mobile-app">
-                <a
-                    className="mobile-app__button"
-                    href={urls.mobileAppDownload}
-                    target="_blank"
-                >
-                    {texts.downloadApp}
-                </a>
+
+                {
+                    (mobileAppDataFetched) ?
+
+                    <div className="mobile-app__wrapper">
+                        <a
+                            className="mobile-app__button"
+                            href={mobileAppData.apkFileUrl}
+                            target="_blank"
+                        >
+                            {texts.downloadApp}
+                        </a>
+
+                        <button
+                            className="mobile-app__button"
+                            onClick={this.visitPage}
+                        >
+                            {texts.visitPage}
+                        </button>
+                    </div> :
+
+                    <AppMobileLoader />
+                }
                 
-                <button
-                    className="mobile-app__button"
-                    onClick={this.visitPage}
-                >
-                    {texts.visitPage}
-                </button>
             </main>
         );
+    }
+
+    componentDidMount() {
+
+        this.props.getMobileAppData();
     }
 
     visitPage() {
@@ -41,3 +79,5 @@ export default class AppMobile extends Component {
         this.props.visitPage();
     }
 }
+
+export default connect(mapStateToProps, mapDisptachToProps)(AppMobile);
