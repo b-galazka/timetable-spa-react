@@ -18,8 +18,7 @@ class Sidebar extends Component {
         const {type: urlParam} = props.match.params;
 
         this.state = {
-            visibleList: urlTranslations[urlParam],
-            openedMenu: false
+            visibleList: urlTranslations[urlParam]
         };
 
         this.buttonHandler = this.buttonHandler.bind(this);
