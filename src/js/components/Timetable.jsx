@@ -69,62 +69,31 @@ class Timetable extends Component {
 
         if (notExists) {
 
-            this.setTitle404();
+            this.setTitle(texts.title.notFound);
         } else if (fetching || fetched) {
 
             const timetableObjectType = urlTranslations[urlParam];
+            const slug = this.getSlug();
 
-            switch (timetableObjectType) {
+            if (timetableObjectType === 'teacher') {
 
-                case 'teacher':
-                    this.setTitleTeacher();
+                const {teachers} = this.props;
 
-                    break;
+                const currentTeacher = teachers.find(
+                    teacher => teacher.slug === slug
+                );
 
-                case 'class':
-                    this.setTitleClass();
+                this.setTitle(currentTeacher.name || currentTeacher.slug);
+            } else {
 
-                    break;
-
-                case 'classroom':
-                    this.setTitleClassroom();
-
-                    break;
+                this.setTitle(slug);
             }
         }
     }
 
-    setTitle404() {
+    setTitle(title) {
 
-        const {title} = texts;
-
-        document.title = `${title.base} | ${title.notFound}`;
-    }
-
-    setTitleTeacher() {
-
-        const {title} = texts;
-        const teacherSlug = this.getSlug();
-        const teachers = this.props.teachers;
-        const currentTeacher = teachers.find(teacher => teacher.slug === teacherSlug);
-
-        document.title = `${title.base} | ${currentTeacher.name || currentTeacher.slug}`;
-    }
-
-    setTitleClass() {
-
-        const {title, schoolClass} = texts;
-        const classSlug = this.getSlug();
-
-        document.title = `${title.base} | ${classSlug}`;
-    }
-
-    setTitleClassroom() {
-
-        const {title, classroom} = texts;
-        const classroomSlug = this.getSlug();
-
-        document.title = `${title.base} | ${classroomSlug}`;
+        document.title = `${texts.title.base} | ${title}`;
     }
 
     getSlug() {
