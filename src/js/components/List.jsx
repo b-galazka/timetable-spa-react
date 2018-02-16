@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link, withRouter} from 'react-router-dom';
 
+import urlsTranslations from '../../json/urlTranslations';
+
 function mapStateToProps(state) {
 
     return {
@@ -24,97 +26,45 @@ class List extends Component {
 
     renderItems() {
 
-        const type = this.props.type;
+        const {type} = this.props;
+        const data = this.getListData(type);
+        const urlSlug = decodeURIComponent(this.props.match.params.slug);
+
+        return data.map(({slug, name, number, _id}) => {
+
+            let url = `/${urlsTranslations[type]}`;
+                url += `/${encodeURIComponent(slug || number)}`;
+
+            const link = <Link to={url}>{name || slug || number}</Link>;
+
+            return (
+                urlSlug === slug ?
+
+                    <li key={_id} className="active">{link}</li> :
+
+                    <li key={_id}>{link}</li>
+            );
+        });
+    }
+
+    getListData(type) {
+
+        const {teachers, classes, classrooms} = this.props;
 
         switch (type) {
 
             case 'teacher':
-                return this.renderTeachers();
+                return teachers;
 
             case 'class':
-                return this.renderClasses();
+                return classes;
 
             case 'classroom':
-                return this.renderClassrooms();
+                return classrooms;
+
+            default:
+                return [];
         }
-    }
-
-    renderTeachers() {
-
-        const teachers = this.props.teachers;
-
-        const teacherUrlParam = decodeURIComponent(this.props.match.params.slug);
-
-        return teachers.map((teacher) => {
-
-            const url = `/nauczyciel/${encodeURIComponent(teacher.slug)}`;
-
-            const link = (
-                <Link to={url}>
-                    {teacher.name || teacher.slug}
-                </Link>
-            );
-
-            return (
-                teacherUrlParam === teacher.slug ?
-
-                <li key={teacher._id} className="active">{link}</li> :
-
-                <li key={teacher._id}>{link}</li>
-            );    
-        });
-    }
-
-    renderClasses() {
-
-        const classes = this.props.classes;
-
-        const classUrlParam = decodeURIComponent(this.props.match.params.slug);
-
-        return classes.map((schoolClass) => {
-
-            const url = `/klasa/${encodeURIComponent(schoolClass.slug)}`;
-
-            const link = (
-                <Link to={url}>
-                    {schoolClass.slug}
-                </Link>
-            );
-
-            return (
-                classUrlParam === schoolClass.slug ?
-
-                <li key={schoolClass._id} className="active">{link}</li> :
-
-                <li key={schoolClass._id}>{link}</li>
-            );
-        });
-    }
-
-    renderClassrooms() {
-
-        const classrooms = this.props.classrooms;
-
-        const classroomUrlParam = decodeURIComponent(this.props.match.params.slug);
-
-        return classrooms.map((classroom) => {
-
-            const url = `/sala/${encodeURIComponent(classroom.number)}`;
-
-            const link = (
-                <Link to={url}>
-                    {classroom.number}
-                </Link>
-            );
-
-            return (
-                classroomUrlParam === classroom.number ?
-
-                <li key={classroom._id} className="active">{link}</li> :
-
-                <li key={classroom._id}>{link}</li>
-            );
-        });
     }
 }
 

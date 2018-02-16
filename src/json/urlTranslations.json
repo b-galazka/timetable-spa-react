@@ -2,5 +2,8 @@
     "nauczyciel": "teacher",
     "klasa": "class",
     "sala": "classroom",
-    "types": ["nauczyciel", "klasa", "sala"]
+    "types": ["nauczyciel", "klasa", "sala"],
+    "teacher": "nauczyciel",
+    "class": "klasa",
+    "classroom": "sala"
 }
