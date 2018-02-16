@@ -38,7 +38,7 @@ class List extends Component {
             const link = <Link to={url}>{name || slug || number}</Link>;
 
             return (
-                urlSlug === slug ?
+                (urlSlug === slug || urlSlug === number) ?
 
                     <li key={_id} className="active">{link}</li> :
 
