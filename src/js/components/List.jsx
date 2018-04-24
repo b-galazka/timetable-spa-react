@@ -29,6 +29,8 @@ class List extends Component {
         const {type} = this.props;
         const data = this.getListData(type);
         const urlSlug = decodeURIComponent(this.props.match.params.slug);
+        const urlType = decodeURIComponent(this.props.match.params.type);
+        const isActiveType = (urlsTranslations[urlType] === type);
 
         return data.map(({slug, name, number, _id}) => {
 
@@ -38,7 +40,7 @@ class List extends Component {
             const link = <Link to={url}>{name || slug || number}</Link>;
 
             return (
-                (urlSlug === slug || urlSlug === number) ?
+                (isActiveType && (urlSlug === slug || urlSlug === number)) ?
 
                     <li key={_id} className="active">{link}</li> :
 
