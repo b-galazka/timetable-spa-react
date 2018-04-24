@@ -30,45 +30,23 @@ class TimetableHeader extends Component {
     renderTitle() {
 
         const {type: urlParam} = this.props.match.params;
-
         const timetableObjectType = urlTranslations[urlParam];
 
-        switch (timetableObjectType) {
+        if (timetableObjectType === 'teacher') {
 
-            case 'teacher':
-                return this.renderTeacherTitle();
-
-            case 'class':
-                return this.renderClassTitle();
-
-            case 'classroom':
-                return this.renderClassroomTitle();
+            return this.renderTeacherTitle();
         }
+
+        return this.getSlug();
     }
 
     renderTeacherTitle() {
 
         const teacherSlug = this.getSlug();
-
         const teachers = this.props.teachers;
-
         const currentTeacher = teachers.find(teacher => teacher.slug === teacherSlug);
 
         return currentTeacher.name || currentTeacher.slug;
-    }
-
-    renderClassTitle() {
-
-        const classSlug = this.getSlug();
-
-        return classSlug;
-    }
-
-    renderClassroomTitle() {
-
-        const classroomSlug = this.getSlug();
-
-        return classroomSlug;
     }
 
     getSlug() {
