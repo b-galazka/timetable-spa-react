@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Link} from 'react-router-dom';
 
 import errors from '../../json/errors';
 import texts from '../../json/texts';
@@ -12,6 +12,13 @@ class NotFound extends Component {
             <section className="app__no-content">
                 <div>
                     <p>{errors.notFound}</p>
+
+                    <Link
+                        to="/"
+                        className="button button--404"
+                    >
+                        {texts.goHomepage}
+                    </Link>
                 </div>
             </section>
         );

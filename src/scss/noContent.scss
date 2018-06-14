@@ -14,3 +14,7 @@
 .app__fetching-error, .timetable__fetching-error {
     text-align: center;
 }
+
+.app__no-content .button--404 {
+    margin-top: 15px;
+}
