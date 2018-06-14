@@ -26,7 +26,7 @@ class List extends Component {
 
     renderItems() {
 
-        const {type} = this.props;
+        const {type, onLinkClicked} = this.props;
         const data = this.getListData(type);
         const urlSlug = decodeURIComponent(this.props.match.params.slug);
         const urlType = decodeURIComponent(this.props.match.params.type);
@@ -37,7 +37,11 @@ class List extends Component {
             let url = `/${urlsTranslations[type]}`;
                 url += `/${encodeURIComponent(slug || number)}`;
 
-            const link = <Link to={url}>{name || slug || number}</Link>;
+            const link = (
+                <Link onClick={onLinkClicked} to={url}>
+                    {name || slug || number}
+                </Link>
+            );
 
             return (
                 (isActiveType && (urlSlug === slug || urlSlug === number)) ?

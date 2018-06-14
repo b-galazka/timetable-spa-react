@@ -5,10 +5,18 @@
         background-color: $darkGrey;
         padding: 30px 10px 10px 10px;
         border-bottom: 5px solid #FFF;
+
+        @media (max-width: 600px) {
+            padding: 10px 55px;
+        }
     }
 
     &__title {
         text-align: center;
         font-size: 2rem;
+
+        @media (max-width: 600px) {
+            font-size: 1.5rem;
+        }
     }
 }
