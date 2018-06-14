@@ -17,17 +17,7 @@
     }
 
     &__button {
-        border: none;
-        background-color: $darkGrey;
-        color: #FFF;
         font-size: 16px;
-        text-decoration: none;
-        font-family: $font;
-        padding: 10px 15px;
-        width: 100%;
-        border-radius: 10px;
-        text-align: center;
-        display: block;
 
         &:first-child {
             margin-bottom: 15px;

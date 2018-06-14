@@ -47,7 +47,7 @@ class AppMobile extends Component {
 
                     <div className="mobile-app__wrapper">
                         <a
-                            className="mobile-app__button"
+                            className="mobile-app__button button"
                             href={mobileAppData.apkFileUrl}
                             target="_blank"
                         >
@@ -55,7 +55,7 @@ class AppMobile extends Component {
                         </a>
 
                         <button
-                            className="mobile-app__button"
+                            className="mobile-app__button button"
                             onClick={this.visitPage}
                         >
                             {texts.visitPage}
