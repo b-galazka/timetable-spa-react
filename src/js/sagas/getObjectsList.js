@@ -1,4 +1,4 @@
-import {call, put, takeEvery} from 'redux-saga/effects';
+import {call, put} from 'redux-saga/effects';
 
 import {putObjectsList} from '../actions/lists';
 import {fetchingInitialStateFailure} from '../actions/initialState';
