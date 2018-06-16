@@ -2,7 +2,7 @@ import {call, put} from 'redux-saga/effects';
 
 import {putObjectsList} from '../actions/lists';
 import {fetchingInitialStateFailure} from '../actions/initialState';
-import axios from './axios';
+import axios from '../axios';
 
 export default function *getObjectsList(type) {
 

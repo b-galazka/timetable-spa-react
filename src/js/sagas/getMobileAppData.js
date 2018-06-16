@@ -6,7 +6,7 @@ import {
 } from '../actions/mobileAppData';
 
 import {REQUESTED} from '../constants/mobileAppData';
-import axios from './axios';
+import axios from '../axios';
 
 function *getMobileAppData() {
 

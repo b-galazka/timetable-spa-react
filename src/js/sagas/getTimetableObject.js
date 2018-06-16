@@ -8,7 +8,7 @@ import {
 
 import doesSlugExist from './doesSlugExist';
 import {REQUESTED} from '../constants/timetableObject';
-import axios from './axios';
+import axios from '../axios';
 
 function pluralize(str) {
 
