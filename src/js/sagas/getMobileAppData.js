@@ -8,7 +8,7 @@ import {
 import {REQUESTED} from '../constants/mobileAppData';
 import axios from '../axios';
 
-function *getMobileAppData() {
+export function *getMobileAppData() {
 
     try {
 
