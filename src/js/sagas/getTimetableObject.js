@@ -1,4 +1,4 @@
-import {call, put, takeLatest, select} from 'redux-saga/effects';
+import {call, put, takeLatest} from 'redux-saga/effects';
 
 import {
     fetchingTimetableObjectSuccess,
@@ -6,30 +6,9 @@ import {
     timetableObjectNotFound
 } from '../actions/timetableObject';
 
+import doesSlugExist from './doesSlugExist';
 import {REQUESTED} from '../constants/timetableObject';
 import axios from './axios';
-
-function *doesSlugExist({slug, objectType}) {
-
-    const {classes, classrooms, teachers} = yield select();
-
-    const doesContainSlug = item => item.slug === slug || item.number === slug;
-
-    switch (objectType) {
-
-        case 'teacher':
-            return teachers.some(doesContainSlug);
-
-        case 'class':
-            return classes.some(doesContainSlug);
-
-        case 'classroom':
-            return classrooms.some(doesContainSlug);
-
-        default:
-            return false;
-    }
-}
 
 function pluralize(str) {
 

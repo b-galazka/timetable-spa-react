@@ -1,4 +1,4 @@
-import {call, put, all, select, takeLatest} from 'redux-saga/effects';
+import {call, put, all, takeLatest} from 'redux-saga/effects';
 
 import {
     fetchingInitialStateFailure,
@@ -7,17 +7,10 @@ import {
 
 import {REQUESTED} from '../constants/initialState';
 import getObjectsList from './getObjectsList';
+import areListsFetched from './areListsFetched';
 import {getTimetableObject} from './getTimetableObject';
-import axios from './axios';
 
-function *areListsFetched() {
-
-    const fetchingError = yield select(state => state.initialState.fetchingError);
-
-    return (!fetchingError);
-}
-
-function *getInitialState(params) {
+export function *getInitialState(params) {
 
     yield all([
         call(getObjectsList, 'teachers'),
