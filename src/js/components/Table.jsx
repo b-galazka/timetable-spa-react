@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
+import propTypes from 'prop-types';
 
 import LessonHour from './LessonHour';
 
@@ -165,7 +166,7 @@ class Table extends Component {
                 />
             );
         }
-    }    
+    }
 
     getNumberOfLastHour() {
 
@@ -203,5 +204,34 @@ class Table extends Component {
         }
     }
 }
+
+Table.propTypes = {
+
+    // redux
+    hours: propTypes.arrayOf(propTypes.shape({
+        start: propTypes.string.isRequired,
+        end: propTypes.string.isRequired,
+        _id: propTypes.string.isRequired
+    })).isRequired,
+
+    timetableObject: propTypes.shape({
+        timetable: propTypes.arrayOf(
+            propTypes.arrayOf(
+                propTypes.arrayOf(
+                    propTypes.shape({
+                        _id: propTypes.string.isRequired,
+                        subject: propTypes.string.isRequired,
+                        class: propTypes.string,
+                        classroom: propTypes.string,
+                        teacherName: propTypes.string,
+                        teacherSlug: propTypes.string
+                    })
+                )
+            ).isRequired
+        ).isRequired,
+
+        type: propTypes.oneOf(['teacher', 'class', 'classroom']).isRequired
+    }).isRequired,
+};
 
 export default connect(mapStateToProps)(Table);
