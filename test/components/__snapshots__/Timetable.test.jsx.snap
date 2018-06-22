@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Timetable component should render only timetable loader if data does not exist 1`] = `
+<section
+  className="timetable"
+>
+  <TimetableLoader />
+</section>
+`;
+
+exports[`Timetable component should render timetable header and timetable content if data has been fetched 1`] = `
+<section
+  className="timetable"
+>
+  <TimetableHeader />
+  <TimetableContent />
+</section>
+`;
+
+exports[`Timetable component should render timetable header and timetable loader if data is being fetched 1`] = `
+<section
+  className="timetable"
+>
+  <TimetableHeader />
+  <TimetableLoader />
+</section>
+`;
