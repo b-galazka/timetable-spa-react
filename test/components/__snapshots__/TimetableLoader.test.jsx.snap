@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TimetableLoader component should render "not found" error if timetable object does not exist 1`] = `
+<section
+  className="timetable__loader"
+>
+  <p
+    className="timetable__fetching-error"
+  >
+    not found
+  </p>
+</section>
+`;
+
+exports[`TimetableLoader component should render fetching error if it has occured during data fetching 1`] = `
+<section
+  className="timetable__loader"
+>
+  <p
+    className="timetable__fetching-error"
+  >
+    fetching error
+  </p>
+</section>
+`;
+
+exports[`TimetableLoader component should render loading animation if data has not been fetched yet 1`] = `
+<section
+  className="timetable__loader"
+>
+  <LoadingAnimation />
+</section>
+`;
