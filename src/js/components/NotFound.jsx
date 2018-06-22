@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import propTypes from 'prop-types';
 
 import errors from '../../json/errors';
 import texts from '../../json/texts';
@@ -40,5 +41,10 @@ class NotFound extends Component {
         }    
     }
 }
+
+NotFound.propTypes = {
+    // router
+    location: propTypes.shape({ pathname: propTypes.string.isRequired }).isRequired
+};
 
 export default withRouter(NotFound);
