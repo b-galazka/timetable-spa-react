@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppContainer component should render content if initial data has been already fetched 1`] = `<Content />`;
+
+exports[`AppContainer component should render loader if initial data has not been fetched yet 1`] = `<Loader />`;
