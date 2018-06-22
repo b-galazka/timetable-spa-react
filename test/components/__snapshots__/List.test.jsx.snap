@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List component should render classes list 1`] = `
+<ul
+  className="sidebar__list"
+>
+  <li>
+    <a
+      href="/class/1AL"
+      onClick={[Function]}
+    >
+      1AL
+    </a>
+  </li>
+  <li
+    className="active"
+  >
+    <a
+      href="/class/4ET"
+      onClick={[Function]}
+    >
+      4ET
+    </a>
+  </li>
+  <li>
+    <a
+      href="/class/%233ET"
+      onClick={[Function]}
+    >
+      #3ET
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`List component should render classrooms list 1`] = `
+<ul
+  className="sidebar__list"
+>
+  <li>
+    <a
+      href="/classroom/100"
+      onClick={[Function]}
+    >
+      100
+    </a>
+  </li>
+  <li
+    className="active"
+  >
+    <a
+      href="/classroom/200"
+      onClick={[Function]}
+    >
+      200
+    </a>
+  </li>
+  <li>
+    <a
+      href="/classroom/%23300"
+      onClick={[Function]}
+    >
+      #300
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`List component should render teachers list 1`] = `
+<ul
+  className="sidebar__list"
+>
+  <li>
+    <a
+      href="/teacher/ABC"
+      onClick={[Function]}
+    >
+      ABC
+    </a>
+  </li>
+  <li
+    className="active"
+  >
+    <a
+      href="/teacher/XYZ"
+      onClick={[Function]}
+    >
+      XYZ name
+    </a>
+  </li>
+  <li>
+    <a
+      href="/teacher/%23ZZZ"
+      onClick={[Function]}
+    >
+      ZZZ name
+    </a>
+  </li>
+</ul>
+`;
