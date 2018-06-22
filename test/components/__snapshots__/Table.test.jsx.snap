@@ -1,0 +1,831 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table component should render class's timetable 1`] = `
+<div
+  className="table"
+>
+  <header
+    className="table__header table__header--ordinal-numbers"
+  >
+    number
+  </header>
+  <div
+    className="table__cell table__cell--ordinal-number"
+    style={
+      Object {
+        "order": 2,
+      }
+    }
+  >
+    1
+  </div>
+  <div
+    className="table__cell table__cell--ordinal-number"
+    style={
+      Object {
+        "order": 3,
+      }
+    }
+  >
+    2
+  </div>
+  <div
+    className="table__cell table__cell--ordinal-number"
+    style={
+      Object {
+        "order": 4,
+      }
+    }
+  >
+    3
+  </div>
+  <div
+    className="table__cell table__cell--ordinal-number"
+    style={
+      Object {
+        "order": 5,
+      }
+    }
+  >
+    4
+  </div>
+  <header
+    className="table__header table__header--hours"
+  >
+    hour
+  </header>
+  <div
+    className="table__cell table__cell--hour"
+    data-number={1}
+    style={
+      Object {
+        "order": 2,
+      }
+    }
+  >
+    1:00
+     - 
+    2:00
+  </div>
+  <div
+    className="table__cell table__cell--hour"
+    data-number={2}
+    style={
+      Object {
+        "order": 3,
+      }
+    }
+  >
+    2:00
+     - 
+    3:00
+  </div>
+  <div
+    className="table__cell table__cell--hour"
+    data-number={3}
+    style={
+      Object {
+        "order": 4,
+      }
+    }
+  >
+    3:00
+     - 
+    4:00
+  </div>
+  <div
+    className="table__cell table__cell--hour"
+    data-number={4}
+    style={
+      Object {
+        "order": 5,
+      }
+    }
+  >
+    4:00
+     - 
+    5:00
+  </div>
+  <header
+    className="table__header"
+  >
+    Monday
+  </header>
+  <LessonHour
+    lessons={
+      Array [
+        Object {
+          "_id": "lesson1",
+          "classroom": "200",
+          "subject": "math",
+          "teacherName": "AB name",
+          "teacherSlug": "AB",
+        },
+      ]
+    }
+    number={1}
+    order={2}
+    timetableObjectType="class"
+  />
+  <LessonHour
+    lessons={
+      Array [
+        Object {
+          "_id": "lesson2",
+          "classroom": "200",
+          "subject": "math",
+          "teacherName": "AB name",
+          "teacherSlug": "AB",
+        },
+      ]
+    }
+    number={2}
+    order={3}
+    timetableObjectType="class"
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={4}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={5}
+  />
+  <header
+    className="table__header table__header--mobile-hidden"
+  >
+    Tuesday
+  </header>
+  <LessonHour
+    mobileHidden={true}
+    order={2}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={3}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={4}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={5}
+  />
+  <header
+    className="table__header"
+  >
+    Wednesday
+  </header>
+  <LessonHour
+    lessons={
+      Array [
+        null,
+      ]
+    }
+    number={1}
+    order={2}
+    timetableObjectType="class"
+  />
+  <LessonHour
+    lessons={
+      Array [
+        Object {
+          "_id": "lesson1",
+          "classroom": "200",
+          "subject": "math",
+          "teacherName": null,
+          "teacherSlug": "AB",
+        },
+      ]
+    }
+    number={2}
+    order={3}
+    timetableObjectType="class"
+  />
+  <LessonHour
+    lessons={
+      Array [
+        Object {
+          "_id": "lesson2",
+          "classroom": "200",
+          "subject": "math",
+          "teacherName": "XY name",
+          "teacherSlug": "XY",
+        },
+      ]
+    }
+    number={3}
+    order={4}
+    timetableObjectType="class"
+  />
+  <LessonHour
+    lessons={
+      Array [
+        Object {
+          "_id": "lesson2",
+          "classroom": "200",
+          "subject": "math",
+          "teacherName": null,
+          "teacherSlug": "XYZ",
+        },
+      ]
+    }
+    number={4}
+    order={5}
+    timetableObjectType="class"
+  />
+  <header
+    className="table__header table__header--mobile-hidden"
+  >
+    Thursday
+  </header>
+  <LessonHour
+    mobileHidden={true}
+    order={2}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={3}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={4}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={5}
+  />
+  <header
+    className="table__header table__header--mobile-hidden"
+  >
+    Friday
+  </header>
+  <LessonHour
+    mobileHidden={true}
+    order={2}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={3}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={4}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={5}
+  />
+</div>
+`;
+
+exports[`Table component should render classroom's timetable 1`] = `
+<div
+  className="table"
+>
+  <header
+    className="table__header table__header--ordinal-numbers"
+  >
+    number
+  </header>
+  <div
+    className="table__cell table__cell--ordinal-number"
+    style={
+      Object {
+        "order": 2,
+      }
+    }
+  >
+    1
+  </div>
+  <div
+    className="table__cell table__cell--ordinal-number"
+    style={
+      Object {
+        "order": 3,
+      }
+    }
+  >
+    2
+  </div>
+  <div
+    className="table__cell table__cell--ordinal-number"
+    style={
+      Object {
+        "order": 4,
+      }
+    }
+  >
+    3
+  </div>
+  <div
+    className="table__cell table__cell--ordinal-number"
+    style={
+      Object {
+        "order": 5,
+      }
+    }
+  >
+    4
+  </div>
+  <header
+    className="table__header table__header--hours"
+  >
+    hour
+  </header>
+  <div
+    className="table__cell table__cell--hour"
+    data-number={1}
+    style={
+      Object {
+        "order": 2,
+      }
+    }
+  >
+    1:00
+     - 
+    2:00
+  </div>
+  <div
+    className="table__cell table__cell--hour"
+    data-number={2}
+    style={
+      Object {
+        "order": 3,
+      }
+    }
+  >
+    2:00
+     - 
+    3:00
+  </div>
+  <div
+    className="table__cell table__cell--hour"
+    data-number={3}
+    style={
+      Object {
+        "order": 4,
+      }
+    }
+  >
+    3:00
+     - 
+    4:00
+  </div>
+  <div
+    className="table__cell table__cell--hour"
+    data-number={4}
+    style={
+      Object {
+        "order": 5,
+      }
+    }
+  >
+    4:00
+     - 
+    5:00
+  </div>
+  <header
+    className="table__header"
+  >
+    Monday
+  </header>
+  <LessonHour
+    lessons={
+      Array [
+        Object {
+          "_id": "lesson1",
+          "class": "3ET",
+          "subject": "math",
+          "teacherName": "AB name",
+          "teacherSlug": "AB",
+        },
+      ]
+    }
+    number={1}
+    order={2}
+    timetableObjectType="classroom"
+  />
+  <LessonHour
+    lessons={
+      Array [
+        Object {
+          "_id": "lesson2",
+          "class": "4ET",
+          "subject": "math",
+          "teacherName": "AB name",
+          "teacherSlug": "AB",
+        },
+      ]
+    }
+    number={2}
+    order={3}
+    timetableObjectType="classroom"
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={4}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={5}
+  />
+  <header
+    className="table__header table__header--mobile-hidden"
+  >
+    Tuesday
+  </header>
+  <LessonHour
+    mobileHidden={true}
+    order={2}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={3}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={4}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={5}
+  />
+  <header
+    className="table__header"
+  >
+    Wednesday
+  </header>
+  <LessonHour
+    lessons={
+      Array [
+        null,
+      ]
+    }
+    number={1}
+    order={2}
+    timetableObjectType="classroom"
+  />
+  <LessonHour
+    lessons={
+      Array [
+        Object {
+          "_id": "lesson1",
+          "class": "1AL",
+          "subject": "math",
+          "teacherName": null,
+          "teacherSlug": "AB",
+        },
+      ]
+    }
+    number={2}
+    order={3}
+    timetableObjectType="classroom"
+  />
+  <LessonHour
+    lessons={
+      Array [
+        Object {
+          "_id": "lesson2",
+          "class": "3BL",
+          "subject": "math",
+          "teacherName": "XY name",
+          "teacherSlug": "XY",
+        },
+      ]
+    }
+    number={3}
+    order={4}
+    timetableObjectType="classroom"
+  />
+  <LessonHour
+    lessons={
+      Array [
+        Object {
+          "_id": "lesson2",
+          "class": "3CT",
+          "subject": "math",
+          "teacherName": null,
+          "teacherSlug": "XYZ",
+        },
+      ]
+    }
+    number={4}
+    order={5}
+    timetableObjectType="classroom"
+  />
+  <header
+    className="table__header table__header--mobile-hidden"
+  >
+    Thursday
+  </header>
+  <LessonHour
+    mobileHidden={true}
+    order={2}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={3}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={4}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={5}
+  />
+  <header
+    className="table__header table__header--mobile-hidden"
+  >
+    Friday
+  </header>
+  <LessonHour
+    mobileHidden={true}
+    order={2}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={3}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={4}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={5}
+  />
+</div>
+`;
+
+exports[`Table component should render teacher's timetable 1`] = `
+<div
+  className="table"
+>
+  <header
+    className="table__header table__header--ordinal-numbers"
+  >
+    number
+  </header>
+  <div
+    className="table__cell table__cell--ordinal-number"
+    style={
+      Object {
+        "order": 2,
+      }
+    }
+  >
+    1
+  </div>
+  <div
+    className="table__cell table__cell--ordinal-number"
+    style={
+      Object {
+        "order": 3,
+      }
+    }
+  >
+    2
+  </div>
+  <div
+    className="table__cell table__cell--ordinal-number"
+    style={
+      Object {
+        "order": 4,
+      }
+    }
+  >
+    3
+  </div>
+  <div
+    className="table__cell table__cell--ordinal-number"
+    style={
+      Object {
+        "order": 5,
+      }
+    }
+  >
+    4
+  </div>
+  <header
+    className="table__header table__header--hours"
+  >
+    hour
+  </header>
+  <div
+    className="table__cell table__cell--hour"
+    data-number={1}
+    style={
+      Object {
+        "order": 2,
+      }
+    }
+  >
+    1:00
+     - 
+    2:00
+  </div>
+  <div
+    className="table__cell table__cell--hour"
+    data-number={2}
+    style={
+      Object {
+        "order": 3,
+      }
+    }
+  >
+    2:00
+     - 
+    3:00
+  </div>
+  <div
+    className="table__cell table__cell--hour"
+    data-number={3}
+    style={
+      Object {
+        "order": 4,
+      }
+    }
+  >
+    3:00
+     - 
+    4:00
+  </div>
+  <div
+    className="table__cell table__cell--hour"
+    data-number={4}
+    style={
+      Object {
+        "order": 5,
+      }
+    }
+  >
+    4:00
+     - 
+    5:00
+  </div>
+  <header
+    className="table__header"
+  >
+    Monday
+  </header>
+  <LessonHour
+    lessons={
+      Array [
+        Object {
+          "_id": "lesson1",
+          "class": "3ET",
+          "classroom": "200",
+          "subject": "math",
+        },
+        Object {
+          "_id": "lesson2",
+          "class": "4ET",
+          "classroom": "200",
+          "subject": "math",
+        },
+      ]
+    }
+    number={1}
+    order={2}
+    timetableObjectType="teacher"
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={3}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={4}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={5}
+  />
+  <header
+    className="table__header table__header--mobile-hidden"
+  >
+    Tuesday
+  </header>
+  <LessonHour
+    mobileHidden={true}
+    order={2}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={3}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={4}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={5}
+  />
+  <header
+    className="table__header"
+  >
+    Wednesday
+  </header>
+  <LessonHour
+    lessons={
+      Array [
+        null,
+      ]
+    }
+    number={1}
+    order={2}
+    timetableObjectType="teacher"
+  />
+  <LessonHour
+    lessons={
+      Array [
+        Object {
+          "_id": "lesson1",
+          "class": "3ET",
+          "classroom": "200",
+          "subject": "math",
+        },
+      ]
+    }
+    number={2}
+    order={3}
+    timetableObjectType="teacher"
+  />
+  <LessonHour
+    lessons={
+      Array [
+        Object {
+          "_id": "lesson2",
+          "class": "4ET",
+          "classroom": "200",
+          "subject": "math",
+        },
+      ]
+    }
+    number={3}
+    order={4}
+    timetableObjectType="teacher"
+  />
+  <LessonHour
+    lessons={
+      Array [
+        Object {
+          "_id": "lesson2",
+          "class": "4ET",
+          "classroom": "200",
+          "subject": "math",
+        },
+      ]
+    }
+    number={4}
+    order={5}
+    timetableObjectType="teacher"
+  />
+  <header
+    className="table__header table__header--mobile-hidden"
+  >
+    Thursday
+  </header>
+  <LessonHour
+    mobileHidden={true}
+    order={2}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={3}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={4}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={5}
+  />
+  <header
+    className="table__header table__header--mobile-hidden"
+  >
+    Friday
+  </header>
+  <LessonHour
+    mobileHidden={true}
+    order={2}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={3}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={4}
+  />
+  <LessonHour
+    mobileHidden={true}
+    order={5}
+  />
+</div>
+`;
