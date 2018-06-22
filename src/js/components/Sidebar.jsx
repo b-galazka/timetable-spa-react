@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import classNames from 'classnames';
+import propTypes from 'prop-types';
 
 import List from './List';
 
@@ -115,5 +116,14 @@ class Sidebar extends Component {
         this.setState({ isMobileOpened: false });
     }
 }
+
+Sidebar.propTypes = {
+    // router
+    match: propTypes.shape({
+        params: propTypes.shape({
+            type: propTypes.string.isRequired
+        }).isRequired
+    }).isRequired
+};
 
 export default withRouter(Sidebar);
