@@ -1,4 +1,4 @@
-import {all, fork} from 'redux-saga/effects';
+import { all, fork } from 'redux-saga/effects';
 
 import rootSaga from '../../src/js/sagas';
 import getTimetableObject from '../../src/js/sagas/getTimetableObject';
@@ -10,7 +10,7 @@ describe('root saga', () => {
     it('should init all sagas watchers', () => {
 
         const saga = rootSaga();
-        const {value} = saga.next();
+        const { value } = saga.next();
 
         const expectedValue = all([
             fork(getTimetableObject),

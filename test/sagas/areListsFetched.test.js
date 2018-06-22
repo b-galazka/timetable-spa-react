@@ -1,7 +1,7 @@
-import {select} from 'redux-saga/effects';
-import {cloneableGenerator} from 'redux-saga/utils';
+import { select } from 'redux-saga/effects';
+import { cloneableGenerator } from 'redux-saga/utils';
 
-import {fetchingErrorSelector} from '../../src/js/sagasSelectors/initialState';
+import { fetchingErrorSelector } from '../../src/js/sagasSelectors/initialState';
 import areListsFetchedSaga from '../../src/js/sagas/areListsFetched';
 
 describe('areListsFetched saga', () => {
@@ -10,7 +10,7 @@ describe('areListsFetched saga', () => {
 
     it('should select fetching error from store', () => {
 
-        const {value} = saga.next();
+        const { value } = saga.next();
 
         expect(value).toEqual(select(fetchingErrorSelector));
     });
@@ -18,7 +18,7 @@ describe('areListsFetched saga', () => {
     it('should return false if fetching error exists', () => {
 
         const sagaClone = saga.clone();
-        const {value} = sagaClone.next(true);
+        const { value } = sagaClone.next(true);
 
         expect(value).toEqual(false);
     });
@@ -26,7 +26,7 @@ describe('areListsFetched saga', () => {
     it('should return true if fetching error doesn not exist', () => {
 
         const sagaClone = saga.clone();
-        const {value} = sagaClone.next(false);
+        const { value } = sagaClone.next(false);
 
         expect(value).toEqual(true);
     });

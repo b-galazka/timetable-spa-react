@@ -1,9 +1,9 @@
-import {call, takeLatest, put} from 'redux-saga/effects';
-import {cloneableGenerator} from 'redux-saga/utils';
+import { call, takeLatest, put } from 'redux-saga/effects';
+import { cloneableGenerator } from 'redux-saga/utils';
 
 import axios from '../../src/js/axios';
 import doesSlugExist from '../../src/js/sagas/doesSlugExist';
-import {REQUESTED} from '../../src/js/constants/timetableObject';
+import { REQUESTED } from '../../src/js/constants/timetableObject';
 
 import getTimetableObjectSagaWatcher, {
     getTimetableObject as getTimetableObjectSaga
@@ -33,8 +33,8 @@ describe('getInitialState saga', () => {
 
     it('should check if slug is correct', () => {
 
-        const {slug, objectType} = sagaParams;
-        const {value} = saga.next();
+        const { slug, objectType } = sagaParams;
+        const { value } = saga.next();
 
         const expectedValue = call(doesSlugExist, {
             slug: decodeURIComponent(slug),
@@ -47,7 +47,7 @@ describe('getInitialState saga', () => {
     it('should put "not found" error to store if slug is not correct', () => {
 
         sagaWithInvalidSlug = saga.clone();
-        const {value} = sagaWithInvalidSlug.next(false);
+        const { value } = sagaWithInvalidSlug.next(false);
 
         expect(value).toEqual(put(timetableObjectNotFound()));
     });
@@ -56,12 +56,12 @@ describe('getInitialState saga', () => {
 
         const result = sagaWithInvalidSlug.next();
 
-        expect(result).toEqual({done: true, value: true});
+        expect(result).toEqual({ done: true, value: true });
     });
 
     it('should fetch timetable object', () => {
 
-        const {value} = saga.next(true);
+        const { value } = saga.next(true);
 
         expect(value).toEqual(call(axios.get, '/teachers/%23XY'));
     });
@@ -72,7 +72,7 @@ describe('getInitialState saga', () => {
 
         saga.next();
 
-        const {value} = saga.next(true);
+        const { value } = saga.next(true);
 
         expect(value).toEqual(call(axios.get, '/classes/XY'));
     });
@@ -80,7 +80,7 @@ describe('getInitialState saga', () => {
     it('should put error to store if timetable object has not been fetched', () => {
 
         sagaWithFetchingError = saga.clone();
-        const {value} = sagaWithFetchingError.throw();
+        const { value } = sagaWithFetchingError.throw();
 
         expect(value).toEqual(put(fetchingTimetableObjectFailure()));
     });
@@ -89,12 +89,12 @@ describe('getInitialState saga', () => {
 
         const result = sagaWithFetchingError.next();
 
-        expect(result).toEqual({done: true, value: false});
+        expect(result).toEqual({ done: true, value: false });
     });
 
     it('should put data to store if timetable object has been fetched', () => {
 
-        const {value} = saga.next({data: 'ABC'});
+        const { value } = saga.next({ data: 'ABC' });
 
         expect(value).toEqual(put(fetchingTimetableObjectSuccess('ABC')));
     });
@@ -112,7 +112,7 @@ describe('getTimetableObject saga watcher', () => {
     it('should watch for latest action', () => {
 
         const watcher = getTimetableObjectSagaWatcher();
-        const {value} = watcher.next();
+        const { value } = watcher.next();
 
         expect(value).toEqual(takeLatest(REQUESTED, getTimetableObjectSaga));
     });

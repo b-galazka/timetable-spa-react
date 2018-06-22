@@ -1,4 +1,4 @@
-import {select} from 'redux-saga/effects';
+import { select } from 'redux-saga/effects';
 
 import doesSlugExistSaga from '../../src/js/sagas/doesSlugExist';
 
@@ -13,18 +13,18 @@ describe('doesSlugExist saga', () => {
     it('should select data from store', () => {
 
         const saga = doesSlugExistSaga({});
-        const {value} = saga.next();
+        const { value } = saga.next();
 
         expect(value).toEqual(select());
     });
 
     it('should return true if teacher\'s slug exists', () => {
 
-        const saga = doesSlugExistSaga({slug: 'XY', objectType: 'teacher'});
+        const saga = doesSlugExistSaga({ slug: 'XY', objectType: 'teacher' });
 
         saga.next();
 
-        const {value} = saga.next(selectedData);
+        const { value } = saga.next(selectedData);
 
         expect(value).toEqual(true);
     });
@@ -35,7 +35,7 @@ describe('doesSlugExist saga', () => {
 
         saga.next();
 
-        const {value} = saga.next(selectedData);
+        const { value } = saga.next(selectedData);
 
         expect(value).toEqual(false);
     });
@@ -68,7 +68,7 @@ describe('doesSlugExist saga', () => {
 
         saga.next();
 
-        const {value} = saga.next(selectedData);
+        const { value } = saga.next(selectedData);
 
         expect(value).toEqual(true);
     });
@@ -79,7 +79,7 @@ describe('doesSlugExist saga', () => {
 
         saga.next();
 
-        const {value} = saga.next(selectedData);
+        const { value } = saga.next(selectedData);
 
         expect(value).toEqual(false);
     });
@@ -90,7 +90,7 @@ describe('doesSlugExist saga', () => {
 
         saga.next();
 
-        const {value} = saga.next(selectedData);
+        const { value } = saga.next(selectedData);
 
         expect(value).toEqual(false);
     });
