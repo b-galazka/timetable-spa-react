@@ -82,4 +82,18 @@ class TimetableContent extends Component {
     }
 }
 
+TimetableContent.propTypes = {
+
+    // redux
+    lastModified(props, propName) {
+
+        const propValue = props[propName];
+
+        if (new Date(propValue) === 'Invalid Date') {
+
+            return new Error('props.lastModified validation error');
+        }
+    }
+};
+
 export default connect(mapStateToProps)(TimetableContent);
