@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import propTypes from 'prop-types';
 
 import LoadingAnimation from './LoadingAnimation';
 
@@ -51,5 +52,15 @@ class TimetableLoader extends Component {
         }
     }
 }
+
+TimetableLoader.propTypes = {
+
+    // redux
+    timetableObject: propTypes.shape({
+        fetching: propTypes.bool.isRequired,
+        fetchingError: propTypes.bool.isRequired,
+        notExists: propTypes.bool.isRequired
+    }).isRequired
+};
 
 export default connect(mapStateToProps)(TimetableLoader);
