@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
+import propTypes from 'prop-types';
 
 import urlsTranslations from '../../json/urlTranslations';
 
@@ -71,5 +72,36 @@ class List extends Component {
         }
     }
 }
+
+List.propTypes = {
+    
+    onLinkClicked: propTypes.func.isRequired,
+    type: propTypes.oneOf(['teacher', 'class', 'classroom']).isRequired,
+
+    // router
+    match: propTypes.shape({
+        params: propTypes.shape({
+            slug: propTypes.string.isRequired,
+            type: propTypes.string.isRequired
+        }).isRequired
+    }).isRequired,
+
+    // redux
+    teachers: propTypes.arrayOf(propTypes.shape({
+        slug: propTypes.string.isRequired,
+        _id: propTypes.string.isRequired,
+        name: propTypes.string
+    })).isRequired,
+
+    classrooms: propTypes.arrayOf(propTypes.shape({
+        number: propTypes.string.isRequired,
+        _id: propTypes.string.isRequired
+    })).isRequired,
+
+    classes: propTypes.arrayOf(propTypes.shape({
+        slug: propTypes.string.isRequired,
+        _id: propTypes.string.isRequired
+    })).isRequired
+};
 
 export default withRouter(connect(mapStateToProps)(List));
