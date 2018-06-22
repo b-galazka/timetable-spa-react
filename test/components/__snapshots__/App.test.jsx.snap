@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component should redirect from "/" to URL set in config file 1`] = `
+<div
+  data-mock="BrowserRouter"
+>
+  <main
+    className="app"
+  >
+    <div
+      data-from="/"
+      data-mock="Redirect"
+      data-to="/redirected"
+    />
+  </main>
+</div>
+`;
+
+exports[`App component should render AppContiner if url is valid 1`] = `
+<div
+  data-mock="BrowserRouter"
+>
+  <main
+    className="app"
+  >
+    <AppContainer />
+  </main>
+</div>
+`;
+
+exports[`App component should render mobile version if app is running on android device 1`] = `
+<div
+  data-mock="BrowserRouter"
+>
+  <AppMobile
+    visitPage={[Function]}
+  />
+</div>
+`;
+
+exports[`App component should render notFound page if URL is invalid 1`] = `
+<div
+  data-mock="BrowserRouter"
+>
+  <main
+    className="app"
+  >
+    <NotFound />
+  </main>
+</div>
+`;
+
+exports[`App component should render notFound page if timetable object type is invalid 1`] = `
+<div
+  data-mock="BrowserRouter"
+>
+  <main
+    className="app"
+  >
+    <NotFound />
+  </main>
+</div>
+`;
