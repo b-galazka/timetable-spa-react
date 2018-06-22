@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TimetableHeader component should render class's title 1`] = `
+<header
+  className="timetable__header"
+>
+  <h1
+    className="timetable__title"
+  >
+    #3ET
+  </h1>
+</header>
+`;
+
+exports[`TimetableHeader component should render classroom's title 1`] = `
+<header
+  className="timetable__header"
+>
+  <h1
+    className="timetable__title"
+  >
+    #200
+  </h1>
+</header>
+`;
+
+exports[`TimetableHeader component should render teacher's title (name) 1`] = `
+<header
+  className="timetable__header"
+>
+  <h1
+    className="timetable__title"
+  >
+    XYZ name
+  </h1>
+</header>
+`;
+
+exports[`TimetableHeader component should render teacher's title (slug) 1`] = `
+<header
+  className="timetable__header"
+>
+  <h1
+    className="timetable__title"
+  >
+    #XYZ
+  </h1>
+</header>
+`;
