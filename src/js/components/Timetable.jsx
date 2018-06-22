@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import propTypes from 'prop-types';
 
 import TimetableLoader from './TimetableLoader';
 import TimetableHeader from './TimetableHeader';
@@ -101,5 +102,30 @@ class Timetable extends Component {
         return decodeURIComponent(this.props.match.params.slug);
     }
 }
+
+Timetable.propTypes = {
+
+    // redux
+    timetableObject: propTypes.shape({
+        fetched: propTypes.bool.isRequired,
+        fetching: propTypes.bool.isRequired,
+        notExists: propTypes.bool.isRequired
+    }).isRequired,
+
+    teachers: propTypes.arrayOf(
+        propTypes.shape({
+            slug: propTypes.string.isRequired,
+            name: propTypes.string
+        }).isRequired
+    ).isRequired,
+
+    // router
+    match: propTypes.shape({
+        params: propTypes.shape({
+            type: propTypes.string.isRequired,
+            slug: propTypes.string.isRequired
+        }).isRequired
+    }).isRequired
+};
 
 export default withRouter(connect(mapStateToProps)(Timetable));
