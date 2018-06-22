@@ -1,4 +1,4 @@
-import {call, put, takeLatest} from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 
 import {
     fetchingTimetableObjectSuccess,
@@ -7,7 +7,7 @@ import {
 } from '../actions/timetableObject';
 
 import doesSlugExist from './doesSlugExist';
-import {REQUESTED} from '../constants/timetableObject';
+import { REQUESTED } from '../constants/timetableObject';
 import axios from '../axios';
 
 function pluralize(str) {
@@ -15,7 +15,7 @@ function pluralize(str) {
     return `${str}${(str === 'class') ? 'e' : ''}s`;
 }
 
-export function *getTimetableObject({objectType, slug}) {
+export function *getTimetableObject({ objectType, slug }) {
 
     const isCorrectSlug = yield call(doesSlugExist, {
         slug: decodeURIComponent(slug), 

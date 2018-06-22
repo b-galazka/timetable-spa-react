@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import urlTranslations from '../../json/urlTranslations';
 
@@ -8,10 +8,9 @@ import '../../scss/timetableHeader.scss';
 
 function mapStateToProps(state) {
 
-    return {
+    const { teachers } = state;
 
-        teachers: state.teachers    
-    };
+    return { teachers };
 }
 
 class TimetableHeader extends Component {
@@ -29,7 +28,7 @@ class TimetableHeader extends Component {
 
     renderTitle() {
 
-        const {type: urlParam} = this.props.match.params;
+        const { type: urlParam } = this.props.match.params;
         const timetableObjectType = urlTranslations[urlParam];
 
         if (timetableObjectType === 'teacher') {
@@ -43,7 +42,7 @@ class TimetableHeader extends Component {
     renderTeacherTitle() {
 
         const teacherSlug = this.getSlug();
-        const teachers = this.props.teachers;
+        const { teachers } = this.props;
         const currentTeacher = teachers.find(teacher => teacher.slug === teacherSlug);
 
         return currentTeacher.name || currentTeacher.slug;

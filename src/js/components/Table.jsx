@@ -1,24 +1,18 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {withRouter, Link} from 'react-router-dom';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import classNames from 'classnames';
 
 import LessonHour from './LessonHour';
 
 import texts from '../../json/texts';
-import urlTranslations from '../../json/urlTranslations';
 
 import '../../scss/table.scss';
 
 function mapStateToProps(state) {
 
-    const {timetableObject} = state;
+    const { timetableObject, hours } = state;
 
-    return {
-
-        timetableObject: timetableObject.data,
-        hours: state.hours
-    };
+    return { timetableObject: timetableObject.data, hours };
 }
 
 class Table extends Component {
@@ -36,7 +30,7 @@ class Table extends Component {
         const numberOfLastHour = this.getNumberOfLastHour();
 
         return (
-            <div className="table" ref={(el) => {this.table = el}}>
+            <div className="table">
                 <header className="table__header table__header--ordinal-numbers">
                     {texts.number}
                 </header>
@@ -63,14 +57,14 @@ class Table extends Component {
 
         const cells = [];
 
-        for (let i=1; i<=number; i++) {
+        for (let i = 1; i <= number; i++) {
 
             cells.push(
                 <div 
                     className="table__cell table__cell--ordinal-number" 
                     key={++this.id}
-                    style={{order: i + 1}}
-                    ref={(el) => {this.tableCells.push(el)}}
+                    style={{ order: i + 1 }}
+                    ref={(el) => { this.tableCells.push(el) }}
                 >
                     {i}
                 </div>
@@ -82,11 +76,10 @@ class Table extends Component {
 
     renderHours(number) {
 
-        const {hours} = this.props;
-
+        const { hours } = this.props;
         const cells = [];
 
-        for (let i=0; i<number; i++) {
+        for (let i = 0; i < number; i++) {
 
             const hour = hours[i];
 
@@ -94,9 +87,9 @@ class Table extends Component {
                 <div 
                     className="table__cell table__cell--hour" 
                     key={hour._id}
-                    style={{order: i + 2}}
+                    style={{ order: i + 2 }}
                     data-number={i + 1}
-                    ref={(el) => {this.tableCells.push(el)}}
+                    ref={(el) => { this.tableCells.push(el) }}
                 >
                     {hour.start} - {hour.end}
                 </div>
@@ -108,7 +101,7 @@ class Table extends Component {
 
     renderDays(lastHour) {
 
-        const {days} = texts;
+        const { days } = texts;
 
         return days.map((day, index) => {
 
@@ -118,7 +111,7 @@ class Table extends Component {
 
                         classNames({
                             'table__header': true,
-                            'table__header--mobile-hidden': (this.countHours(index) === 0)
+                            'table__header--mobile-hidden': !this.areLessonsInDay(index)
                         })
                     }
 
@@ -134,11 +127,8 @@ class Table extends Component {
 
     renderLessons(dayNumber, lastHour) {
 
-        const {timetable} = this.props.timetableObject;
-        const urlParam = this.props.match.params.type;
-
+        const { timetable, type } = this.props.timetableObject;
         const day = timetable[dayNumber];
-        const timetableObjectType = urlTranslations[urlParam];
 
         let cells = [];
 
@@ -150,7 +140,7 @@ class Table extends Component {
             cells = day.map((hour, index) => (
                 <LessonHour
                     lessons={hour}
-                    timetableObjectType={timetableObjectType}
+                    timetableObjectType={type}
                     order={index + 2}
                     number={index + 1}
                     key={++this.id}
@@ -165,7 +155,7 @@ class Table extends Component {
 
     pushEmptyCells(cells, lastHour) {
 
-        for (let i=cells.length; i<lastHour; i++) {
+        for (let i = cells.length; i < lastHour; i++) {
 
             cells.push(
                 <LessonHour
@@ -179,23 +169,23 @@ class Table extends Component {
 
     getNumberOfLastHour() {
 
-        const {timetable} = this.props.timetableObject;
+        const { timetable } = this.props.timetableObject;
 
         return timetable.reduce((prev, arr) => (prev > arr.length) ? prev : arr.length, 0);
     }
 
-    countHours(dayNumber) {
+    areLessonsInDay(dayNumber) {
 
-        const {timetable} = this.props.timetableObject;
+        const { timetable } = this.props.timetableObject;
 
-        return timetable[dayNumber].reduce((prev, arr) => (
-            (arr[0] && arr.length > 0) ? arr.length : 0
-        ), 0);
+        return timetable[dayNumber].some(
+            lessonsArr => lessonsArr[0] && lessonsArr.length > 0
+        );
     }
 
     detectIE10() {
 
-        const {userAgent} = navigator;
+        const { userAgent } = navigator;
 
         return userAgent.includes('MSIE ') || /Trident.*rv\:11\./.test(userAgent);
     }
@@ -206,7 +196,7 @@ class Table extends Component {
 
             this.tableCells.forEach((cell) => {
 
-                const {order} = cell.style;
+                const { order } = cell.style;
 
                 cell.style.msFlexOrder = order;
             });
@@ -214,4 +204,4 @@ class Table extends Component {
     }
 }
 
-export default withRouter(connect(mapStateToProps)(Table));
+export default connect(mapStateToProps)(Table);

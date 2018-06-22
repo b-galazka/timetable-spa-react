@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {withRouter, Link} from 'react-router-dom';
+import React, { Component } from 'react';
+import { withRouter, Link } from 'react-router-dom';
 
 import errors from '../../json/errors';
 import texts from '../../json/texts';
@@ -31,9 +31,8 @@ class NotFound extends Component {
 
     updateTitle() {
 
-        const {title} = texts;
-
-        const {pathname} = this.props.location;
+        const { title } = texts;
+        const { pathname } = this.props.location;
 
         if (pathname !== '/') {
 

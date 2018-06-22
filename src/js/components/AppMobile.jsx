@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import AppMobileLoader from './AppMobileLoader';
-import {getMobileAppData} from '../actions/mobileAppData';
+import { getMobileAppData } from '../actions/mobileAppData';
 
 import texts from '../../json/texts.json';
 
@@ -11,7 +11,7 @@ import '../../scss/mobileApp.scss';
 
 function mapStateToProps(state) {
 
-    const {data, fetched} = state.mobileAppData;
+    const { data, fetched } = state.mobileAppData;
 
     return {
         mobileAppData: data,
@@ -28,16 +28,9 @@ function mapDisptachToProps(dispatch) {
 
 class AppMobile extends Component {
 
-    constructor() {
-
-        super();
-
-        this.visitPage = this.visitPage.bind(this);
-    }
-
     render() {
 
-        const {mobileAppData, mobileAppDataFetched} = this.props;
+        const { mobileAppData, mobileAppDataFetched } = this.props;
 
         return (
             <main className="mobile-app">
@@ -56,7 +49,7 @@ class AppMobile extends Component {
 
                         <button
                             className="mobile-app__button button"
-                            onClick={this.visitPage}
+                            onClick={this.props.visitPage}
                         >
                             {texts.visitPage}
                         </button>
@@ -72,11 +65,6 @@ class AppMobile extends Component {
     componentDidMount() {
 
         this.props.getMobileAppData();
-    }
-
-    visitPage() {
-
-        this.props.visitPage();
     }
 }
 

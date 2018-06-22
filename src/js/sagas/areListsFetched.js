@@ -1,6 +1,6 @@
-import {select} from 'redux-saga/effects';
+import { select } from 'redux-saga/effects';
 
-import {fetchingErrorSelector} from '../sagasSelectors/initialState';
+import { fetchingErrorSelector } from '../sagasSelectors/initialState';
 
 export default function *areListsFetched() {
 

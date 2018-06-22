@@ -1,4 +1,4 @@
-import {PUT_HOURS_LIST} from '../constants/lists';
+import { PUT_HOURS_LIST } from '../constants/lists';
 
 export default function hoursListReducer(state = [], action) {
 

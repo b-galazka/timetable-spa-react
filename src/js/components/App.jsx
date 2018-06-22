@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Switch, Route, BrowserRouter, Redirect} from 'react-router-dom';
+import React, { Component } from 'react';
+import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 
 import AppContainer from './AppContainer';
 import NotFound from './NotFound';
@@ -34,9 +34,8 @@ export default class App extends Component {
                     <AppMobile visitPage={this.visitPage} /> :
 
                     <main className="app">
-                        <Route exact path='/' render={() => <Redirect to={urls.defaultRedirection} />} />
-
                         <Switch>
+                            <Redirect exact from="/" to={urls.defaultRedirection} />
                             <Route exact path='/:type/:slug' render={this.isUrlValid} />
                             <Route component={NotFound} />
                         </Switch>
@@ -47,9 +46,9 @@ export default class App extends Component {
         );
     }
 
-    isUrlValid({match}) {
+    isUrlValid({ match }) {
 
-        const {type} = match.params;
+        const { type } = match.params;
 
         const possibleTypes = urlTranslations.types;
 

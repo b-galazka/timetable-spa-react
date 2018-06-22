@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import LoadingAnimation from './LoadingAnimation';
 import errors from '../../json/errors';
@@ -8,7 +8,7 @@ import '../../scss/mobileAppLoader.scss';
 
 function mapStateToProps(state) {
 
-    const {fetchingError} = state.mobileAppData;
+    const { fetchingError } = state.mobileAppData;
 
     return {
         mobileAppDataFetchingError: fetchingError

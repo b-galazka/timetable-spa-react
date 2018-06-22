@@ -1,4 +1,4 @@
-import {PUT_CLASSROOMS_LIST} from '../constants/lists';
+import { PUT_CLASSROOMS_LIST } from '../constants/lists';
 
 export default function classroomsListReducer(state = [], action) {
 

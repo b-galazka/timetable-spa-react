@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import TimetableLoader from './TimetableLoader';
 import TimetableHeader from './TimetableHeader';
@@ -13,7 +13,7 @@ import '../../scss/timetable.scss';
 
 function mapStateToProps(state) {
 
-    const {fetched, notExists, fetching} = state.timetableObject;
+    const { fetched, notExists, fetching } = state.timetableObject;
 
     return {
 
@@ -31,7 +31,7 @@ class Timetable extends Component {
 
     render() {
 
-        const {fetched, notExists} = this.props.timetableObject;
+        const { fetched, notExists } = this.props.timetableObject;
 
         return (
             <section className="timetable">
@@ -65,7 +65,7 @@ class Timetable extends Component {
     updateTitle() {
 
         const urlParam = this.props.match.params.type;
-        const {fetched, notExists, fetching} = this.props.timetableObject;
+        const { fetched, notExists, fetching } = this.props.timetableObject;
 
         if (notExists) {
 
@@ -77,7 +77,7 @@ class Timetable extends Component {
 
             if (timetableObjectType === 'teacher') {
 
-                const {teachers} = this.props;
+                const { teachers } = this.props;
 
                 const currentTeacher = teachers.find(
                     teacher => teacher.slug === slug

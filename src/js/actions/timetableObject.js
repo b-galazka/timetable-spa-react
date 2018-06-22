@@ -1,6 +1,6 @@
-import {REQUESTED, SUCCEEDED, FAILED, NOT_FOUND} from '../constants/timetableObject';
+import { REQUESTED, SUCCEEDED, FAILED, NOT_FOUND } from '../constants/timetableObject';
 
-export function getTimetableObject({objectType, slug}) {
+export function getTimetableObject({ objectType, slug }) {
 
     return {
         type: REQUESTED,

@@ -1,4 +1,4 @@
-import {REQUESTED, SUCCEEDED, FAILED} from '../constants/initialState';
+import { REQUESTED, SUCCEEDED, FAILED } from '../constants/initialState';
 
 const initialState = {
     fetched: false,

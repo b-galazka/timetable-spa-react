@@ -1,4 +1,4 @@
-import {REQUESTED, SUCCEEDED, FAILED, NOT_FOUND} from '../constants/timetableObject';
+import { REQUESTED, SUCCEEDED, FAILED, NOT_FOUND } from '../constants/timetableObject';
 
 const initialState = {
     fetched: false,

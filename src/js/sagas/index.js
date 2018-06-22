@@ -1,4 +1,4 @@
-import {all, fork} from 'redux-saga/effects';
+import { all, fork } from 'redux-saga/effects';
 
 import getTimetableObject from './getTimetableObject';
 import getInitialState from './getInitialState';

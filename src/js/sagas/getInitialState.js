@@ -1,14 +1,14 @@
-import {call, put, all, takeLatest} from 'redux-saga/effects';
+import { call, put, all, takeLatest } from 'redux-saga/effects';
 
 import {
     fetchingInitialStateFailure,
     fetchingInitialStateSuccess
 } from '../actions/initialState';
 
-import {REQUESTED} from '../constants/initialState';
+import { REQUESTED } from '../constants/initialState';
 import getObjectsList from './getObjectsList';
 import areListsFetched from './areListsFetched';
-import {getTimetableObject} from './getTimetableObject';
+import { getTimetableObject } from './getTimetableObject';
 
 export function *getInitialState(params) {
 

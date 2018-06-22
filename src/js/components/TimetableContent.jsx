@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import classNames from 'classnames';
 
 import Table from './Table';
@@ -11,10 +11,9 @@ import '../../scss/animations.scss';
 
 function mapStateToProps(state) {
 
-    const {timetableObject} = state;
+    const { timetableObject } = state;
 
     return {
-
         lastModified: timetableObject.data.update
     };
 }

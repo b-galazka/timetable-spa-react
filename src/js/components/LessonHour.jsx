@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -7,8 +7,7 @@ class LessonHour extends Component {
 
     render() {
 
-        const {mobileHidden, order, number} = this.props;
-
+        const { mobileHidden, order, number } = this.props;
         const hasLessons = this.hasLessons();
 
         return (
@@ -22,9 +21,9 @@ class LessonHour extends Component {
                     })
                 }
                 
-                style={{order}}
+                style={{ order }}
                 data-number={number}
-                ref={(el) => {this.tableCell = el}}
+                ref={(el) => { this.tableCell = el }}
             >
                 {hasLessons && this.renderLessons()}
             </article>
@@ -38,7 +37,7 @@ class LessonHour extends Component {
 
     renderLessons() {
 
-        const {lessons} = this.props;
+        const { lessons } = this.props;
 
         return lessons.map((lesson) => {
 
@@ -47,7 +46,7 @@ class LessonHour extends Component {
                 return null;
             }
 
-            const {_id, subject} = lesson;
+            const { _id, subject } = lesson;
 
             return (
                 <div key={_id}>
@@ -61,9 +60,8 @@ class LessonHour extends Component {
 
     renderSecondInfo(lesson) {
 
-        const {timetableObjectType} = this.props;
-
-        const {teacherSlug, class: schoolClass, teacherName} = lesson;
+        const { timetableObjectType } = this.props;
+        const { teacherSlug, class: schoolClass, teacherName } = lesson;
 
         switch (timetableObjectType) {
 
@@ -88,9 +86,8 @@ class LessonHour extends Component {
 
     renderThirdInfo(lesson) {
 
-        const {timetableObjectType} = this.props;
-
-        const {classroom, class: schoolClass} = lesson;
+        const { timetableObjectType } = this.props;
+        const { classroom, class: schoolClass } = lesson;
 
         switch (timetableObjectType) {
 
@@ -108,24 +105,23 @@ class LessonHour extends Component {
 
     hasLessons() {
 
-        const {lessons} = this.props;
+        const { lessons } = this.props;
 
-        return Array.isArray(lessons) && lessons[0];
+        return Array.isArray(lessons) && Boolean(lessons[0]);
     }
     
     detectIE10() {
 
-        const {userAgent} = navigator;
+        const { userAgent } = navigator;
 
         return userAgent.includes('MSIE ') || /Trident.*rv\:11\./.test(userAgent);
     }
 
     applyPrefix() {
 
-
         if (this.detectIE10()) {
 
-            const {style} = this.tableCell;
+            const { style } = this.tableCell;
             
             style.msFlexOrder = style.order;
         }

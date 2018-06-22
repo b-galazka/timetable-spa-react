@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {withRouter} from 'react-router-dom';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import classNames from 'classnames';
 
 import List from './List';
@@ -15,7 +15,7 @@ class Sidebar extends Component {
 
         super();
 
-        const {type: urlParam} = props.match.params;
+        const { type: urlParam } = props.match.params;
 
         this.state = {
             visibleList: urlTranslations[urlParam],
@@ -29,7 +29,7 @@ class Sidebar extends Component {
 
     render() {
 
-        const {visibleList, isMobileOpened} = this.state;
+        const { visibleList, isMobileOpened } = this.state;
 
         return (
             <section 
@@ -103,7 +103,7 @@ class Sidebar extends Component {
 
     toggleOnMobile() {
 
-        const {isMobileOpened} = this.state;
+        const { isMobileOpened } = this.state;
 
         this.setState({
             isMobileOpened: !isMobileOpened

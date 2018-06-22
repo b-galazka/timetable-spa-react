@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import {withRouter} from 'react-router-dom';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router-dom';
 
-import {getInitialState} from '../actions/initialState';
-import {getTimetableObject} from '../actions/timetableObject';
+import { getInitialState } from '../actions/initialState';
+import { getTimetableObject } from '../actions/timetableObject';
 
 import Content from './Content';
 import Loader from './Loader';
@@ -13,7 +13,7 @@ import urlTranslations from '../../json/urlTranslations';
 
 function mapStateToProps(state) {
 
-    const {fetched} = state.initialState;
+    const { fetched } = state.initialState;
 
     return {
         initialStateFetched: fetched
@@ -32,7 +32,7 @@ class AppContainer extends Component {
 
     render() {
 
-        const {initialStateFetched} = this.props;
+        const { initialStateFetched } = this.props;
 
         if (initialStateFetched) {
             
@@ -49,9 +49,9 @@ class AppContainer extends Component {
 
     componentWillReceiveProps(nextProps) {
 
-        const {props} = this;
-        const {slug, type} = props.match.params;
-        const {slug: nextSlug, type: nextType} = nextProps.match.params;
+        const { props } = this;
+        const { slug, type } = props.match.params;
+        const { slug: nextSlug, type: nextType } = nextProps.match.params;
 
         if (slug !== nextSlug || type !== nextType) {
 
@@ -64,8 +64,8 @@ class AppContainer extends Component {
 
     fetchInitialState() {
 
-        const {props} = this;
-        const {slug, type} = props.match.params;
+        const { props } = this;
+        const { slug, type } = props.match.params;
 
         props.getInitialState({
             slug,

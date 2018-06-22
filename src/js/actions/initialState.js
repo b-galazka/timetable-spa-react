@@ -1,6 +1,6 @@
-import {REQUESTED, FAILED, SUCCEEDED} from '../constants/initialState';
+import { REQUESTED, FAILED, SUCCEEDED } from '../constants/initialState';
 
-export function getInitialState({objectType, slug}) {
+export function getInitialState({ objectType, slug }) {
 
     return {
         type: REQUESTED,

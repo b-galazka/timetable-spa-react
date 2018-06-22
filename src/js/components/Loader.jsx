@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import LoadingAnimation from './LoadingAnimation';
 import errors from '../../json/errors';
@@ -8,14 +8,14 @@ import '../../scss/noContent.scss';
 
 function mapStateToProps(state) {
 
-    const {fetchingError} = state.initialState;
+    const { fetchingError } = state.initialState;
 
     return {
         initialStateFetchingError: fetchingError
     };
 }
 
-function Loader({initialStateFetchingError}) {
+function Loader({ initialStateFetchingError }) {
 
     return (
         <section className="app__no-content">

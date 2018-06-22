@@ -1,8 +1,8 @@
-import {select} from 'redux-saga/effects';
+import { select } from 'redux-saga/effects';
 
-export default function *doesSlugExist({slug, objectType}) {
+export default function *doesSlugExist({ slug, objectType }) {
 
-    const {classes, classrooms, teachers} = yield select();
+    const { classes, classrooms, teachers } = yield select();
 
     const doesContainSlug = item => item.slug === slug || item.number === slug;
 

@@ -1,11 +1,11 @@
-import {call, put, takeLatest} from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 
 import {
     fetchingMobileAppDataSuccess,
     fetchingMobileAppDataFailure
 } from '../actions/mobileAppData';
 
-import {REQUESTED} from '../constants/mobileAppData';
+import { REQUESTED } from '../constants/mobileAppData';
 import axios from '../axios';
 
 export function *getMobileAppData() {

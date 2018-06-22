@@ -1,16 +1,14 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {Link, withRouter} from 'react-router-dom';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link, withRouter } from 'react-router-dom';
 
 import urlsTranslations from '../../json/urlTranslations';
 
 function mapStateToProps(state) {
 
-    return {
-        teachers: state.teachers,
-        classes: state.classes,
-        classrooms: state.classrooms
-    };
+    const { teachers, classes, classrooms } = state;
+
+    return { teachers, classes, classrooms };
 }
 
 class List extends Component {
@@ -26,13 +24,13 @@ class List extends Component {
 
     renderItems() {
 
-        const {type, onLinkClicked} = this.props;
+        const { type, onLinkClicked } = this.props;
         const data = this.getListData(type);
         const urlSlug = decodeURIComponent(this.props.match.params.slug);
         const urlType = decodeURIComponent(this.props.match.params.type);
         const isActiveType = (urlsTranslations[urlType] === type);
 
-        return data.map(({slug, name, number, _id}) => {
+        return data.map(({ slug, name, number, _id }) => {
 
             let url = `/${urlsTranslations[type]}`;
                 url += `/${encodeURIComponent(slug || number)}`;
@@ -55,7 +53,7 @@ class List extends Component {
 
     getListData(type) {
 
-        const {teachers, classes, classrooms} = this.props;
+        const { teachers, classes, classrooms } = this.props;
 
         switch (type) {
 

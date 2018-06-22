@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import LoadingAnimation from './LoadingAnimation';
 
@@ -9,7 +9,7 @@ import '../../scss/noContent.scss';
 
 function mapStateToProps(state) {
 
-    const {fetching, fetchingError, notExists} = state.timetableObject;
+    const { fetching, fetchingError, notExists } = state.timetableObject;
 
     return {
 
@@ -34,7 +34,7 @@ class TimetableLoader extends Component {
 
     renderLoaderContent() {
 
-        const {timetableObject} = this.props;
+        const { timetableObject } = this.props;
 
         if (timetableObject.fetching) {
 

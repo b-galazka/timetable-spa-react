@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function LoadingAnimation({width, height, color}) {
+function LoadingAnimation({ width, height, color }) {
 
     return (
         <svg 

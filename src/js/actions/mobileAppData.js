@@ -1,4 +1,4 @@
-import {REQUESTED, SUCCEEDED, FAILED} from '../constants/mobileAppData';
+import { REQUESTED, SUCCEEDED, FAILED } from '../constants/mobileAppData';
 
 export function getMobileAppData() {
 

@@ -1,4 +1,4 @@
-import {REQUESTED, SUCCEEDED, FAILED} from '../constants/mobileAppData';
+import { REQUESTED, SUCCEEDED, FAILED } from '../constants/mobileAppData';
 
 const initialState = {
     fetched: false,
@@ -9,7 +9,7 @@ const initialState = {
 
 export default function mobileAppDataReducer(state = initialState, action) {
 
-    const {payload} = action;
+    const { payload } = action;
 
     switch (action.type) {
 
