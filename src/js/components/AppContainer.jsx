@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
+import propTypes from 'prop-types';
 
 import { getInitialState } from '../actions/initialState';
 import { getTimetableObject } from '../actions/timetableObject';
@@ -73,5 +74,21 @@ class AppContainer extends Component {
         });
     }
 }
+
+AppContainer.propTypes = {
+
+    // redux
+    initialStateFetched: propTypes.bool.isRequired,
+    getInitialState: propTypes.func.isRequired,
+    getTimetableObject: propTypes.func.isRequired,
+
+    // router
+    match: propTypes.shape({
+        params: propTypes.shape({
+            slug: propTypes.string.isRequired,
+            type: propTypes.string.isRequired
+        }).isRequired
+    }).isRequired
+};
 
 export default withRouter(connect(mapStateToProps, mapDispachToProps)(AppContainer));
