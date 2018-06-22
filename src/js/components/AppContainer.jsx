@@ -49,9 +49,8 @@ class AppContainer extends Component {
 
     componentWillReceiveProps(nextProps) {
 
-        const props = this.props;
-
-        const {slug, type} = this.props.match.params;
+        const {props} = this;
+        const {slug, type} = props.match.params;
         const {slug: nextSlug, type: nextType} = nextProps.match.params;
 
         if (slug !== nextSlug || type !== nextType) {
@@ -65,8 +64,7 @@ class AppContainer extends Component {
 
     fetchInitialState() {
 
-        const props = this.props;
-
+        const {props} = this;
         const {slug, type} = props.match.params;
 
         props.getInitialState({
