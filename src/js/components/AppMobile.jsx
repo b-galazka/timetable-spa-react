@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import propTypes from 'prop-types';
 
 import AppMobileLoader from './AppMobileLoader';
 import { getMobileAppData } from '../actions/mobileAppData';
@@ -67,5 +68,25 @@ class AppMobile extends Component {
         this.props.getMobileAppData();
     }
 }
+
+AppMobile.propTypes = {
+
+    visitPage: propTypes.func.isRequired,
+
+    // redux
+    mobileAppDataFetched: propTypes.bool.isRequired,
+    getMobileAppData: propTypes.func.isRequired,
+
+    mobileAppData(props, propName) {
+
+        if(
+            props.mobileAppDataFetched === true && 
+            (!props[propName] || typeof props[propName].apkFileUrl !== 'string')
+        ) {
+
+            return new Error('props.mobileAppData validation error');
+        }
+    }
+};
 
 export default connect(mapStateToProps, mapDisptachToProps)(AppMobile);
