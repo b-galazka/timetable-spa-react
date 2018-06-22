@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content component should render Sidebar and Timetable 1`] = `
+<div
+  className="app__wrapper animated"
+  onAnimationEnd={[Function]}
+>
+  <Sidebar />
+  <Timetable />
+</div>
+`;
