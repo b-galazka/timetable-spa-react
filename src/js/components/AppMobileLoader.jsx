@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import propTypes from 'prop-types';
 
 import LoadingAnimation from './LoadingAnimation';
 import errors from '../../json/errors';
@@ -33,5 +34,10 @@ function AppMobileLoader({ mobileAppDataFetchingError }) {
         </section>
     );
 }
+
+AppMobileLoader.propTypes = {
+    // redux
+    mobileAppDataFetchingError: propTypes.bool.isRequired
+};
 
 export default connect(mapStateToProps)(AppMobileLoader);
