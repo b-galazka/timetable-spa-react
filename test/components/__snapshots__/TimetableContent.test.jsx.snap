@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TimetableContent component should render with date in DD/MM/YYYY HH:MM format 1`] = `
+<section
+  className="timetable__wrapper animated"
+  onAnimationEnd={[Function]}
+>
+  <div
+    className="timetable__content"
+  >
+    <Table />
+  </div>
+  <footer
+    className="timetable__footer"
+  >
+    <p>
+      last modified
+      : 
+      02/06/2018 09:05
+    </p>
+  </footer>
+</section>
+`;
+
+exports[`TimetableContent component should render with date in valid format 1`] = `
+<section
+  className="timetable__wrapper animated"
+  onAnimationEnd={[Function]}
+>
+  <div
+    className="timetable__content"
+  >
+    <Table />
+  </div>
+  <footer
+    className="timetable__footer"
+  >
+    <p>
+      last modified
+      : 
+      20/12/2018 10:47
+    </p>
+  </footer>
+</section>
+`;
