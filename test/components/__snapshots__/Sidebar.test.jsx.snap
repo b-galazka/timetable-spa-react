@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar component should render classes list 1`] = `
+<section
+  className="sidebar"
+>
+  <div
+    className="sidebar__wrapper"
+  >
+    <div
+      className="sidebar__buttons"
+    >
+      <button
+        className="sidebar__button"
+        onClick={[Function]}
+        type="button"
+      >
+        Teachers
+      </button>
+      <button
+        className="sidebar__button sidebar__button--active"
+        onClick={[Function]}
+        type="button"
+      >
+        Classes
+      </button>
+      <button
+        className="sidebar__button"
+        onClick={[Function]}
+        type="button"
+      >
+        Classrooms
+      </button>
+    </div>
+    <List
+      onLinkClicked={[Function]}
+      type="class"
+    />
+  </div>
+  <button
+    className="sidebar__mobile-trigger"
+    onClick={[Function]}
+  >
+    <span />
+  </button>
+</section>
+`;
+
+exports[`Sidebar component should render classrooms list 1`] = `
+<section
+  className="sidebar"
+>
+  <div
+    className="sidebar__wrapper"
+  >
+    <div
+      className="sidebar__buttons"
+    >
+      <button
+        className="sidebar__button"
+        onClick={[Function]}
+        type="button"
+      >
+        Teachers
+      </button>
+      <button
+        className="sidebar__button"
+        onClick={[Function]}
+        type="button"
+      >
+        Classes
+      </button>
+      <button
+        className="sidebar__button sidebar__button--active"
+        onClick={[Function]}
+        type="button"
+      >
+        Classrooms
+      </button>
+    </div>
+    <List
+      onLinkClicked={[Function]}
+      type="classroom"
+    />
+  </div>
+  <button
+    className="sidebar__mobile-trigger"
+    onClick={[Function]}
+  >
+    <span />
+  </button>
+</section>
+`;
+
+exports[`Sidebar component should render teachers list 1`] = `
+<section
+  className="sidebar"
+>
+  <div
+    className="sidebar__wrapper"
+  >
+    <div
+      className="sidebar__buttons"
+    >
+      <button
+        className="sidebar__button sidebar__button--active"
+        onClick={[Function]}
+        type="button"
+      >
+        Teachers
+      </button>
+      <button
+        className="sidebar__button"
+        onClick={[Function]}
+        type="button"
+      >
+        Classes
+      </button>
+      <button
+        className="sidebar__button"
+        onClick={[Function]}
+        type="button"
+      >
+        Classrooms
+      </button>
+    </div>
+    <List
+      onLinkClicked={[Function]}
+      type="teacher"
+    />
+  </div>
+  <button
+    className="sidebar__mobile-trigger"
+    onClick={[Function]}
+  >
+    <span />
+  </button>
+</section>
+`;
