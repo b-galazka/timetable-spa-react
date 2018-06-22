@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppMobile component should render loader if mobile app data has not been fetched yet 1`] = `
+<main
+  className="mobile-app"
+>
+  <AppMobileLoader />
+</main>
+`;
+
+exports[`AppMobile component should render page if mobile app data has been already fetched 1`] = `
+<main
+  className="mobile-app"
+>
+  <div
+    className="mobile-app__wrapper"
+  >
+    <a
+      className="mobile-app__button button"
+      href="apk file url"
+      target="_blank"
+    >
+      download app
+    </a>
+    <button
+      className="mobile-app__button button"
+      onClick={[MockFunction]}
+    >
+      visit page
+    </button>
+  </div>
+</main>
+`;
