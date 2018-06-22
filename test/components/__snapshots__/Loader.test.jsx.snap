@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader component should render fetching error 1`] = `
+<section
+  className="app__no-content"
+>
+  <p
+    className="app__fetching-error"
+  >
+    fetching error
+  </p>
+</section>
+`;
+
+exports[`Loader component should render loading animation if there is no fetching error 1`] = `
+<section
+  className="app__no-content"
+>
+  <figure>
+    <LoadingAnimation
+      height="120px"
+      width="120px"
+    />
+  </figure>
+</section>
+`;
