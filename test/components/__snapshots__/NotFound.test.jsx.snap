@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound component should render 404 page 1`] = `
+<section
+  className="app__no-content"
+>
+  <div>
+    <p>
+      not found
+    </p>
+    <a
+      className="button button--404"
+      href="/"
+      onClick={[Function]}
+    >
+      go homepage
+    </a>
+  </div>
+</section>
+`;
