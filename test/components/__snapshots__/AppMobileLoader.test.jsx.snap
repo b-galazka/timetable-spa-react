@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppMobileLoader component should render fetching error 1`] = `
+<section
+  className="mobile-app__loader"
+>
+  <p
+    className="mobile-app__fetching-error"
+  >
+    fetching error
+  </p>
+</section>
+`;
+
+exports[`AppMobileLoader component should render loading animation if there is no fetching error 1`] = `
+<section
+  className="mobile-app__loader"
+>
+  <figure>
+    <LoadingAnimation
+      height="120px"
+      width="120px"
+    />
+  </figure>
+</section>
+`;
