@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LessonHour component should render class's lessons 1`] = `
+<article
+  className="table__cell"
+  data-number={1}
+  style={
+    Object {
+      "order": 1,
+    }
+  }
+>
+  <div>
+    <span>
+      math
+    </span>
+    <a
+      href="/nauczyciel/XYZ"
+      onClick={[Function]}
+      title="XYZ lastname"
+    >
+      XYZ
+    </a>
+    <a
+      href="/sala/200"
+      onClick={[Function]}
+    >
+      200
+    </a>
+  </div>
+  <div>
+    <span>
+      PE
+    </span>
+    <a
+      href="/nauczyciel/ABC"
+      onClick={[Function]}
+      title={null}
+    >
+      ABC
+    </a>
+    <a
+      href="/sala/300%23"
+      onClick={[Function]}
+    >
+      300#
+    </a>
+  </div>
+</article>
+`;
+
+exports[`LessonHour component should render classroom's lessons 1`] = `
+<article
+  className="table__cell"
+  data-number={1}
+  style={
+    Object {
+      "order": 1,
+    }
+  }
+>
+  <div>
+    <span>
+      math
+    </span>
+    <a
+      href="/nauczyciel/XYZ"
+      onClick={[Function]}
+      title="XYZ lastname"
+    >
+      XYZ
+    </a>
+    <a
+      href="/sala/undefined"
+      onClick={[Function]}
+    />
+  </div>
+  <div>
+    <span>
+      PE
+    </span>
+    <a
+      href="/nauczyciel/%23ABC"
+      onClick={[Function]}
+      title={null}
+    >
+      #ABC
+    </a>
+    <a
+      href="/sala/undefined"
+      onClick={[Function]}
+    />
+  </div>
+</article>
+`;
+
+exports[`LessonHour component should render empty table cell 1`] = `
+<article
+  className="table__cell table__cell--empty"
+  data-number={0}
+  style={
+    Object {
+      "order": 1,
+    }
+  }
+/>
+`;
+
+exports[`LessonHour component should render table cell hidden on mobile phones 1`] = `
+<article
+  className="table__cell table__cell--mobile-hidden"
+  data-number={0}
+  style={
+    Object {
+      "order": 1,
+    }
+  }
+/>
+`;
+
+exports[`LessonHour component should render teacher's lessons 1`] = `
+<article
+  className="table__cell"
+  data-number={1}
+  style={
+    Object {
+      "order": 1,
+    }
+  }
+>
+  <div>
+    <span>
+      math
+    </span>
+    <a
+      href="/klasa/3ET%23"
+      onClick={[Function]}
+    >
+      3ET#
+    </a>
+    <a
+      href="/sala/200"
+      onClick={[Function]}
+    >
+      200
+    </a>
+  </div>
+  <div>
+    <span>
+      math
+    </span>
+    <a
+      href="/klasa/4ET"
+      onClick={[Function]}
+    >
+      4ET
+    </a>
+    <a
+      href="/sala/200"
+      onClick={[Function]}
+    >
+      200
+    </a>
+  </div>
+</article>
+`;
