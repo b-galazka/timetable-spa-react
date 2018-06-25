@@ -22,7 +22,10 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 include: path.resolve(__dirname, 'src'),
-                loader: 'babel-loader'
+                loader: 'babel-loader',
+                options: {
+                    forceEnv: 'production'
+                }
             },
 
             {
