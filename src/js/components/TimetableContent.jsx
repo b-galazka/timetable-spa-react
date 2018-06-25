@@ -89,7 +89,7 @@ TimetableContent.propTypes = {
 
         const propValue = props[propName];
 
-        if (new Date(propValue) === 'Invalid Date') {
+        if (new Date(propValue).toString() === 'Invalid Date') {
 
             return new Error('props.lastModified validation error');
         }
