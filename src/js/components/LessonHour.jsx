@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
+import detectIE10 from '../utils/detectIE10';
+
 class LessonHour extends Component {
 
     render() {
@@ -109,17 +111,10 @@ class LessonHour extends Component {
 
         return Array.isArray(lessons) && Boolean(lessons[0]);
     }
-    
-    detectIE10() {
-
-        const { userAgent } = navigator;
-
-        return userAgent.includes('MSIE ') || /Trident.*rv\:11\./.test(userAgent);
-    }
 
     applyPrefix() {
 
-        if (this.detectIE10()) {
+        if (detectIE10()) {
 
             const { style } = this.tableCell;
             

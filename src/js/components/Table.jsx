@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import classNames from 'classnames';
 import propTypes from 'prop-types';
 
+import detectIE10 from '../utils/detectIE10';
 import LessonHour from './LessonHour';
 
 import texts from '../../json/texts';
@@ -184,16 +185,9 @@ class Table extends Component {
         );
     }
 
-    detectIE10() {
-
-        const { userAgent } = navigator;
-
-        return userAgent.includes('MSIE ') || /Trident.*rv\:11\./.test(userAgent);
-    }
-
     applyPrefixes() {
 
-        if (this.detectIE10()) {
+        if (detectIE10()) {
 
             this.tableCells.forEach((cell) => {
 
