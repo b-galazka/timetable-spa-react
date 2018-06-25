@@ -4,6 +4,7 @@ import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 import AppContainer from './AppContainer';
 import NotFound from './NotFound';
 import AppMobile from './AppMobile';
+import detectAndroidDevice from '../utils/detectAndroidDevice';
 
 import urlTranslations from '../../json/urlTranslations';
 import urls from '../../json/urls.json';
@@ -17,7 +18,7 @@ export default class App extends Component {
         super();
 
         this.state = {
-            android: this.detectAndroidDevice()
+            android: detectAndroidDevice()
         };
 
         this.visitPage = this.visitPage.bind(this);
@@ -59,13 +60,6 @@ export default class App extends Component {
 
             return <NotFound />;
         }
-    }
-
-    detectAndroidDevice() {
-
-        const userAgent = navigator.userAgent.toLowerCase();
-
-        return userAgent.includes('android');
     }
 
     visitPage() {
