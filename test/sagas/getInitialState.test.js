@@ -3,6 +3,7 @@ import { cloneableGenerator } from 'redux-saga/utils';
 
 import getObjectsListSaga from '../../src/js/sagas/getObjectsList';
 import areListsFetchedSaga from '../../src/js/sagas/areListsFetched';
+import getLastTimetableUpdateDate from '../../src/js/sagas/getLastTimetableUpdateDate';
 import { REQUESTED } from '../../src/js/constants/initialState';
 
 import getInitialStateSagaWatcher, {
@@ -30,12 +31,17 @@ jest.mock(
     })
 );
 
+jest.mock(
+    '../../src/js/sagas/getLastTimetableUpdateDate',
+    () => function *getLastTimetableUpdateDate() {}
+);
+
 describe('getInitialState saga', () => {
 
     const sagaParams = { slug: 'XY', objectType: 'teacher' };
     const saga = cloneableGenerator(getInitialStateSaga)(sagaParams);
 
-    it('should fetch all lists in parallel', () => {
+    it('should fetch all lists and last update date in parallel', () => {
 
         const { value } = saga.next();
 
@@ -43,20 +49,21 @@ describe('getInitialState saga', () => {
             call(getObjectsListSaga, 'teachers'),
             call(getObjectsListSaga, 'classes'),
             call(getObjectsListSaga, 'classrooms'),
-            call(getObjectsListSaga, 'hours')
+            call(getObjectsListSaga, 'hours'),
+            call(getLastTimetableUpdateDate)
         ]);
 
         expect(value).toEqual(expectedValue);
     });
 
-    it('should check if all lists have been correctly fetched', () => {
+    it('should check if all lists and last update date have been correctly fetched', () => {
 
         const { value } = saga.next();
 
         expect(value).toEqual(call(areListsFetchedSaga));
     });
 
-    it('should finish work if lists have not been correctly fetched', () => {
+    it('should finish work if lists or last update date have not been correctly fetched', () => {
 
         const sagaClone = saga.clone();
         const { done } = sagaClone.next(false);
@@ -64,7 +71,8 @@ describe('getInitialState saga', () => {
         expect(done).toEqual(true);
     });
 
-    it('should fetch timetable object if lists have been correvtly fetched ', () => {
+    it('should fetch timetable object if lists and last update date ' +
+        'have been correvtly fetched ', () => {
 
         const { value } = saga.next(true);
 

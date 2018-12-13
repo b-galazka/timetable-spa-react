@@ -40,7 +40,7 @@ describe('getInitialState saga', () => {
             slug: decodeURIComponent(slug),
             objectType
         });
-  
+
         expect(value).toEqual(expectedValue);
     });
 
@@ -94,9 +94,18 @@ describe('getInitialState saga', () => {
 
     it('should put data to store if timetable object has been fetched', () => {
 
-        const { value } = saga.next({ data: 'ABC' });
+        const responseMock = {
+            data: { a: 'A', b: 'B', c: 'C' }
+        };
 
-        expect(value).toEqual(put(fetchingTimetableObjectSuccess('ABC')));
+        const putDataMock = {
+            ...responseMock.data,
+            type: sagaParams.objectType
+        };
+
+        const { value } = saga.next(responseMock);
+
+        expect(value).toEqual(put(fetchingTimetableObjectSuccess(putDataMock)));
     });
 
     it('should return true if timetable object has been fetched', () => {
