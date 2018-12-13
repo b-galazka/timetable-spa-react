@@ -14,7 +14,7 @@ function mapStateToProps(state) {
     const { timetableObject } = state;
 
     return {
-        lastModified: timetableObject.data.update
+        lastModified: timetableObject.lastUpdateDate
     };
 }
 
@@ -23,7 +23,7 @@ class TimetableContent extends Component {
     constructor() {
 
         super();
-        
+
         this.state = {
             animationClass: true
         };
@@ -75,7 +75,7 @@ class TimetableContent extends Component {
     }
 
     removeAnimationClass() {
-        
+
         this.setState({
             animationClass: false
         });

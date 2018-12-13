@@ -1,14 +1,23 @@
-import { REQUESTED, SUCCEEDED, FAILED, NOT_FOUND } from '../constants/timetableObject';
+import {
+    REQUESTED,
+    SUCCEEDED,
+    FAILED,
+    NOT_FOUND,
+    PUT_LAST_UPDATE_DATE
+} from '../constants/timetableObject';
 
 const initialState = {
     fetched: false,
     fetching: false,
     fetchingError: false,
     notExists: false,
-    data: null
+    data: null,
+    lastUpdateDate: null
 };
 
 export default function timetableObjectReducer(state = initialState, action) {
+
+    const { payload } = action;
 
     switch (action.type) {
 
@@ -27,10 +36,10 @@ export default function timetableObjectReducer(state = initialState, action) {
                 fetched: true,
                 fetching: false,
                 fetchingError: false,
-                data: action.payload
+                data: payload
             };
 
-        case FAILED: 
+        case FAILED:
             return {
                 ...state,
                 fetched: false,
@@ -45,6 +54,12 @@ export default function timetableObjectReducer(state = initialState, action) {
                 fetching: false,
                 fetchingError: false,
                 notExists: true
+            };
+
+        case PUT_LAST_UPDATE_DATE:
+            return {
+                ...state,
+                lastUpdateDate: payload
             };
 
         default:

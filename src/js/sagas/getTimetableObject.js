@@ -18,7 +18,7 @@ function pluralize(str) {
 export function *getTimetableObject({ objectType, slug }) {
 
     const isCorrectSlug = yield call(doesSlugExist, {
-        slug: decodeURIComponent(slug), 
+        slug: decodeURIComponent(slug),
         objectType
     });
 
@@ -26,11 +26,10 @@ export function *getTimetableObject({ objectType, slug }) {
 
         try {
 
-            const response = yield call(axios.get, `/${pluralize(objectType)}/${slug}`);
+            const { data } = yield call(axios.get, `/${pluralize(objectType)}/${slug}`);
 
-            yield put(fetchingTimetableObjectSuccess(response.data));
+            yield put(fetchingTimetableObjectSuccess({ ...data, type: objectType }));
 
-            return true;
         } catch (err) {
 
             yield put(fetchingTimetableObjectFailure());
@@ -40,9 +39,9 @@ export function *getTimetableObject({ objectType, slug }) {
     } else {
 
         yield put(timetableObjectNotFound());
+    }
 
-        return true;
-    }    
+    return true;
 }
 
 export default function *getTimetableObjectWatcher() {

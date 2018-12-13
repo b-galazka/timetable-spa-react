@@ -8,6 +8,7 @@ import {
 import { REQUESTED } from '../constants/initialState';
 import getObjectsList from './getObjectsList';
 import areListsFetched from './areListsFetched';
+import getLastTimetableUpdateDate from './getLastTimetableUpdateDate';
 import { getTimetableObject } from './getTimetableObject';
 
 export function *getInitialState(params) {
@@ -16,7 +17,8 @@ export function *getInitialState(params) {
         call(getObjectsList, 'teachers'),
         call(getObjectsList, 'classes'),
         call(getObjectsList, 'classrooms'),
-        call(getObjectsList, 'hours')
+        call(getObjectsList, 'hours'),
+        call(getLastTimetableUpdateDate)
     ]);
 
     if (yield call(areListsFetched)) {

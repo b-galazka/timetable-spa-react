@@ -1,4 +1,10 @@
-import { REQUESTED, SUCCEEDED, FAILED, NOT_FOUND } from '../constants/timetableObject';
+import {
+    REQUESTED,
+    SUCCEEDED,
+    FAILED,
+    NOT_FOUND,
+    PUT_LAST_UPDATE_DATE
+} from '../constants/timetableObject';
 
 export function getTimetableObject({ objectType, slug }) {
 
@@ -28,5 +34,13 @@ export function timetableObjectNotFound() {
 
     return {
         type: NOT_FOUND
+    };
+}
+
+export function putLastUpdateDate(payload) {
+
+    return {
+        type: PUT_LAST_UPDATE_DATE,
+        payload
     };
 }
