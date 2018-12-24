@@ -71,7 +71,7 @@ TimetableHeader.propTypes = {
             slug: propTypes.string.isRequired,
             name: propTypes.string
         }).isRequired
-    ).isRequired,
+    ).isRequired
 };
 
 export default withRouter(connect(mapStateToProps)(TimetableHeader));

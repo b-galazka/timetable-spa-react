@@ -33,8 +33,7 @@ class List extends Component {
 
         return data.map(({ slug, name, number, _id }) => {
 
-            let url = `/${urlsTranslations[type]}`;
-                url += `/${encodeURIComponent(slug || number)}`;
+            const url = `/${urlsTranslations[type]}/${encodeURIComponent(slug || number)}`;
 
             const link = (
                 <Link onClick={onLinkClicked} to={url}>
@@ -74,7 +73,7 @@ class List extends Component {
 }
 
 List.propTypes = {
-    
+
     onLinkClicked: propTypes.func.isRequired,
     type: propTypes.oneOf(['teacher', 'class', 'classroom']).isRequired,
 

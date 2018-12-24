@@ -39,26 +39,26 @@ class AppMobile extends Component {
                 {
                     (mobileAppDataFetched) ?
 
-                    <div className="mobile-app__wrapper">
-                        <a
-                            className="mobile-app__button button"
-                            href={mobileAppData.apkFileUrl}
-                            target="_blank"
-                        >
-                            {texts.downloadApp}
-                        </a>
+                        <div className="mobile-app__wrapper">
+                            <a
+                                className="mobile-app__button button"
+                                href={mobileAppData.apkFileUrl}
+                                target="_blank" rel="noopener noreferrer"
+                            >
+                                {texts.downloadApp}
+                            </a>
 
-                        <button
-                            className="mobile-app__button button"
-                            onClick={this.props.visitPage}
-                        >
-                            {texts.visitPage}
-                        </button>
-                    </div> :
+                            <button
+                                className="mobile-app__button button"
+                                onClick={this.props.visitPage}
+                            >
+                                {texts.visitPage}
+                            </button>
+                        </div> :
 
-                    <AppMobileLoader />
+                        <AppMobileLoader />
                 }
-                
+
             </main>
         );
     }
@@ -80,13 +80,17 @@ AppMobile.propTypes = {
     mobileAppData(props, propName) {
 
         if(
-            props.mobileAppDataFetched === true && 
+            props.mobileAppDataFetched === true &&
             (!props[propName] || typeof props[propName].apkFileUrl !== 'string')
         ) {
 
             return new Error('props.mobileAppData validation error');
         }
     }
+};
+
+AppMobile.defaultProps = {
+    mobileAppData: null
 };
 
 export default connect(mapStateToProps, mapDisptachToProps)(AppMobile);

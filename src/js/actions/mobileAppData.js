@@ -13,7 +13,7 @@ export function fetchingMobileAppDataSuccess(payload) {
         type: SUCCEEDED,
         payload
     };
-};
+}
 
 export function fetchingMobileAppDataFailure() {
 

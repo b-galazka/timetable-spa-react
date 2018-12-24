@@ -17,21 +17,21 @@ class LessonHour extends Component {
                 className={
 
                     classNames({
-                        'table__cell': true,
+                        table__cell: true,
                         'table__cell--empty': (! hasLessons && ! mobileHidden),
                         'table__cell--mobile-hidden': mobileHidden
                     })
                 }
-                
+
                 style={{ order }}
                 data-number={number}
-                ref={(el) => { this.tableCell = el }}
+                ref={(el) => { this.tableCell = el; }}
             >
                 {hasLessons && this.renderLessons()}
             </article>
         );
     }
-    
+
     componentDidMount() {
 
         this.applyPrefix();
@@ -67,20 +67,20 @@ class LessonHour extends Component {
 
         switch (timetableObjectType) {
 
-            case 'teacher': 
+            case 'teacher':
                 return <Link to={`/klasa/${encodeURIComponent(schoolClass)}`}>{schoolClass}</Link>;
 
             case 'class':
             case 'classroom':
                 return (
-                    <Link 
+                    <Link
                         to={`/nauczyciel/${encodeURIComponent(teacherSlug)}`}
                         title={teacherName}
                     >
                         {teacherSlug}
                     </Link>
                 );
-                
+
             default:
                 return null;
         }
@@ -99,7 +99,7 @@ class LessonHour extends Component {
             case 'class':
             case 'teacher':
                 return <Link to={`/sala/${encodeURIComponent(classroom)}`}>{classroom}</Link>;
-                
+
             default:
                 return null;
         }
@@ -117,7 +117,7 @@ class LessonHour extends Component {
         if (detectIE10()) {
 
             const { style } = this.tableCell;
-            
+
             style.msFlexOrder = style.order;
         }
     }

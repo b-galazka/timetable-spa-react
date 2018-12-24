@@ -62,18 +62,18 @@ class Table extends Component {
         for (let i = 1; i <= number; i++) {
 
             cells.push(
-                <div 
-                    className="table__cell table__cell--ordinal-number" 
+                <div
+                    className="table__cell table__cell--ordinal-number"
                     key={++this.id}
                     style={{ order: i + 1 }}
-                    ref={(el) => { this.tableCells.push(el) }}
+                    ref={(el) => { this.tableCells.push(el); }}
                 >
                     {i}
                 </div>
             );
         }
 
-        return cells;    
+        return cells;
     }
 
     renderHours(number) {
@@ -86,12 +86,12 @@ class Table extends Component {
             const hour = hours[i];
 
             cells.push(
-                <div 
-                    className="table__cell table__cell--hour" 
+                <div
+                    className="table__cell table__cell--hour"
                     key={hour._id}
                     style={{ order: i + 2 }}
                     data-number={i + 1}
-                    ref={(el) => { this.tableCells.push(el) }}
+                    ref={(el) => { this.tableCells.push(el); }}
                 >
                     {hour.start} - {hour.end}
                 </div>
@@ -112,7 +112,7 @@ class Table extends Component {
                     className={
 
                         classNames({
-                            'table__header': true,
+                            table__header: true,
                             'table__header--mobile-hidden': !this.areLessonsInDay(index)
                         })
                     }
@@ -225,7 +225,7 @@ Table.propTypes = {
         ).isRequired,
 
         type: propTypes.oneOf(['teacher', 'class', 'classroom']).isRequired
-    }).isRequired,
+    }).isRequired
 };
 
 export default connect(mapStateToProps)(Table);

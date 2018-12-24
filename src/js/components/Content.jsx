@@ -23,11 +23,11 @@ export default class Content extends Component {
     render() {
 
         return (
-            <div 
+            <div
                 className={
 
                     classNames({
-                        'app__wrapper': true,
+                        app__wrapper: true,
                         animated: this.state.animationClass
                     })
                 }

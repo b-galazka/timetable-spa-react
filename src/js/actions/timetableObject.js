@@ -21,7 +21,7 @@ export function fetchingTimetableObjectSuccess(payload) {
         type: SUCCEEDED,
         payload
     };
-};
+}
 
 export function fetchingTimetableObjectFailure() {
 

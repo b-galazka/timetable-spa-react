@@ -44,9 +44,9 @@ class Timetable extends Component {
                 {
                     fetched ?
 
-                    <TimetableContent /> :
+                        <TimetableContent /> :
 
-                    <TimetableLoader />
+                        <TimetableLoader />
                 }
 
             </section>
@@ -70,7 +70,7 @@ class Timetable extends Component {
 
         if (notExists) {
 
-            this.setTitle(texts.title.notFound);
+            Timetable.setTitle(texts.title.notFound);
         } else if (fetching || fetched) {
 
             const timetableObjectType = urlTranslations[urlParam];
@@ -84,15 +84,15 @@ class Timetable extends Component {
                     teacher => teacher.slug === slug
                 );
 
-                this.setTitle(currentTeacher.name || currentTeacher.slug);
+                Timetable.setTitle(currentTeacher.name || currentTeacher.slug);
             } else {
 
-                this.setTitle(slug);
+                Timetable.setTitle(slug);
             }
         }
     }
 
-    setTitle(title) {
+    static setTitle(title) {
 
         document.title = `${texts.title.base} | ${title}`;
     }

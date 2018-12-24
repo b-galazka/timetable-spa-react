@@ -18,6 +18,7 @@ exports[`AppMobile component should render page if mobile app data has been alre
     <a
       className="mobile-app__button button"
       href="apk file url"
+      rel="noopener noreferrer"
       target="_blank"
     >
       download app

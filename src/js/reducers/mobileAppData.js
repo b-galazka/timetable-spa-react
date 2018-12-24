@@ -32,7 +32,7 @@ export default function mobileAppDataReducer(state = initialState, action) {
                     apkFileUrl: payload.apkFileUrl
                 }
             };
-            
+
         case FAILED:
             return {
                 ...state,

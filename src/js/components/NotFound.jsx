@@ -38,7 +38,7 @@ class NotFound extends Component {
         if (pathname !== '/') {
 
             document.title = `${title.base} | ${title.notFound}`;
-        }    
+        }
     }
 }
 

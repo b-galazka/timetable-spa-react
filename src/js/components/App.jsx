@@ -32,34 +32,32 @@ export default class App extends Component {
                 {
                     (this.state.android) ?
 
-                    <AppMobile visitPage={this.visitPage} /> :
+                        <AppMobile visitPage={this.visitPage} /> :
 
-                    <main className="app">
-                        <Switch>
-                            <Redirect exact from="/" to={urls.defaultRedirection} />
-                            <Route exact path='/:type/:slug' render={this.isUrlValid} />
-                            <Route component={NotFound} />
-                        </Switch>
-                    </main>
+                        <main className="app">
+                            <Switch>
+                                <Redirect exact from="/" to={urls.defaultRedirection} />
+                                <Route exact path='/:type/:slug' render={App.isUrlValid} />
+                                <Route component={NotFound} />
+                            </Switch>
+                        </main>
                 }
-                
+
             </BrowserRouter>
         );
     }
 
-    isUrlValid({ match }) {
+    static isUrlValid({ match }) {
 
         const { type } = match.params;
-
         const possibleTypes = urlTranslations.types;
 
         if (possibleTypes.includes(type)) {
 
             return <AppContainer />;
-        } else {
-
-            return <NotFound />;
         }
+
+        return <NotFound />;
     }
 
     visitPage() {

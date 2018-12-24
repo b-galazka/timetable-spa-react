@@ -18,7 +18,7 @@ function mapStateToProps(state) {
             fetching,
             fetchingError,
             notExists
-        }    
+        }
     };
 }
 
@@ -46,10 +46,9 @@ class TimetableLoader extends Component {
         } else if (timetableObject.notExists) {
 
             return <p className="timetable__fetching-error">{errors.notFound}</p>;
-        } else {
-
-            return null;
         }
+
+        return null;
     }
 }
 

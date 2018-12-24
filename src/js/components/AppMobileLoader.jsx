@@ -24,11 +24,11 @@ function AppMobileLoader({ mobileAppDataFetchingError }) {
             {
                 (mobileAppDataFetchingError) ?
 
-                <p className="mobile-app__fetching-error">{errors.fetchingError}</p> :
+                    <p className="mobile-app__fetching-error">{errors.fetchingError}</p> :
 
-                <figure>
-                    <LoadingAnimation width="120px" height="120px" />
-                </figure>
+                    <figure>
+                        <LoadingAnimation width="120px" height="120px" />
+                    </figure>
             }
 
         </section>

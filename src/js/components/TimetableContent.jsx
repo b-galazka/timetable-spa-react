@@ -34,11 +34,11 @@ class TimetableContent extends Component {
     render() {
 
         return (
-            <section className="timetable__wrapper"
+            <section
                 className={
 
                     classNames({
-                        'timetable__wrapper': true,
+                        timetable__wrapper: true,
                         animated: this.state.animationClass
                     })
                 }
@@ -61,15 +61,15 @@ class TimetableContent extends Component {
         const date = new Date(this.props.lastModified);
 
         const year = date.getFullYear();
-        const day = this.formatTimeUnit(date.getDate());
-        const month = this.formatTimeUnit(date.getMonth() + 1);
-        const hour = this.formatTimeUnit(date.getHours());
-        const minutes = this.formatTimeUnit(date.getMinutes());
+        const day = TimetableContent.formatTimeUnit(date.getDate());
+        const month = TimetableContent.formatTimeUnit(date.getMonth() + 1);
+        const hour = TimetableContent.formatTimeUnit(date.getHours());
+        const minutes = TimetableContent.formatTimeUnit(date.getMinutes());
 
         return `${day}/${month}/${year} ${hour}:${minutes}`;
     }
 
-    formatTimeUnit(unit) {
+    static formatTimeUnit(unit) {
 
         return (unit < 10) ? `0${unit}` : unit;
     }
@@ -94,6 +94,10 @@ TimetableContent.propTypes = {
             return new Error('props.lastModified validation error');
         }
     }
+};
+
+TimetableContent.defaultProps = {
+    lastModified: null
 };
 
 export default connect(mapStateToProps)(TimetableContent);

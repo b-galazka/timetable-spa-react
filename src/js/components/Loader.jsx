@@ -24,11 +24,11 @@ function Loader({ initialStateFetchingError }) {
             {
                 (initialStateFetchingError) ?
 
-                <p className="app__fetching-error">{errors.fetchingError}</p> :
+                    <p className="app__fetching-error">{errors.fetchingError}</p> :
 
-                <figure>
-                    <LoadingAnimation width="120px" height="120px" />
-                </figure>
+                    <figure>
+                        <LoadingAnimation width="120px" height="120px" />
+                    </figure>
             }
 
         </section>

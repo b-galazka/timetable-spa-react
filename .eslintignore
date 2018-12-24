@@ -1,0 +1,8 @@
+node_modules/**/*
+dist/**/*
+test/**/*
+
+# webpack config files
+/*.js
+
+postcss.config.js

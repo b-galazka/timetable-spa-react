@@ -13,7 +13,7 @@ export default function classesListReducer(state = initialState, action) {
         case REQUESTED:
             return {
                 ...state,
-                fetching: true,
+                fetching: true
             };
 
         case SUCCEEDED:
@@ -23,7 +23,7 @@ export default function classesListReducer(state = initialState, action) {
                 fetched: true
             };
 
-        case FAILED: 
+        case FAILED:
             return {
                 ...state,
                 fetching: false,

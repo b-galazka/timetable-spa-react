@@ -33,7 +33,7 @@ class Sidebar extends Component {
         const { visibleList, isMobileOpened } = this.state;
 
         return (
-            <section 
+            <section
                 className={
 
                     classNames({
@@ -74,14 +74,14 @@ class Sidebar extends Component {
             const buttonText = buttonsTexts[key];
 
             return (
-                <button 
-                    type="button" 
+                <button
+                    type="button"
                     onClick={this.listButtonHandler(key)}
                     key={index}
                     className={
-                        
+
                         classNames({
-                            'sidebar__button': true,
+                            sidebar__button: true,
                             'sidebar__button--active': (key === this.state.visibleList)
                         })
                     }

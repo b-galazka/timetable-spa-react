@@ -36,7 +36,7 @@ class AppContainer extends Component {
         const { initialStateFetched } = this.props;
 
         if (initialStateFetched) {
-            
+
             return <Content />;
         }
 
